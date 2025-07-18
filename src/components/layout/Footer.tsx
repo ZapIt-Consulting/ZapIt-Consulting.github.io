@@ -32,7 +32,7 @@ export default function Footer() {
           <div className="space-y-4">
             <Link to="/" className="flex items-center space-x-2">
               <Brain className="h-8 w-8 text-accent" />
-              <span className="text-xl font-bold text-foreground">ProcessPulse AI</span>
+              <span className="text-xl font-bold text-foreground">ZapIt</span>
             </Link>
             <p className="text-sm leading-6 text-muted-foreground max-w-md">
               Transforming business operations through intelligent AI solutions. 
@@ -73,7 +73,7 @@ export default function Footer() {
             <div className="mt-4 space-y-3">
               <div className="flex items-center space-x-3">
                 <Mail className="h-4 w-4 text-accent" />
-                <span className="text-sm text-muted-foreground">hello@processpulse.ai</span>
+                <span className="text-sm text-muted-foreground">hello@zapit.ai</span>
               </div>
               <div className="flex items-center space-x-3">
                 <Phone className="h-4 w-4 text-accent" />
@@ -89,7 +89,7 @@ export default function Footer() {
 
         <div className="mt-8 border-t border-border pt-8">
           <p className="text-xs leading-5 text-muted-foreground text-center">
-            &copy; 2024 ProcessPulse AI. All rights reserved.
+            &copy; 2024 ZapIt. All rights reserved.
           </p>
         </div>
       </div>

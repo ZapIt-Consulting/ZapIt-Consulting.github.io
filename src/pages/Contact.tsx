@@ -14,7 +14,7 @@ const contactMethods = [
     icon: Mail,
     title: "Email",
     description: "Send us a detailed message",
-    contact: "hello@processpulse.ai",
+    contact: "hello@zapit.ai",
     action: "Send email"
   },
   {

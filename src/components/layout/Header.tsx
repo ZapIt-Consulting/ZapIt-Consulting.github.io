@@ -22,7 +22,7 @@ export default function Header() {
         <div className="flex lg:flex-1">
           <Link to="/" className="-m-1.5 p-1.5 flex items-center space-x-2">
             <Brain className="h-8 w-8 text-accent" />
-            <span className="text-xl font-bold text-foreground">ProcessPulse AI</span>
+            <span className="text-xl font-bold text-foreground">ZapIt</span>
           </Link>
         </div>
         
@@ -67,7 +67,7 @@ export default function Header() {
             <div className="flex items-center justify-between">
               <Link to="/" className="-m-1.5 p-1.5 flex items-center space-x-2">
                 <Brain className="h-8 w-8 text-accent" />
-                <span className="text-xl font-bold text-foreground">ProcessPulse AI</span>
+                <span className="text-xl font-bold text-foreground">ZapIt</span>
               </Link>
               <button
                 type="button"

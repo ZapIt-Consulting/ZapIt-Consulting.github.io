@@ -30,13 +30,13 @@ const stats = [
 
 const testimonials = [
   {
-    quote: "ProcessPulse AI transformed our manufacturing operations. We've seen a 45% increase in efficiency and significant cost savings.",
+    quote: "ZapIt transformed our manufacturing operations. We've seen a 45% increase in efficiency and significant cost savings.",
     author: "Sarah Johnson",
     company: "TechManufacturing Inc.",
     role: "Operations Director",
   },
   {
-    quote: "The AI solutions implemented by ProcessPulse have revolutionized our customer service processes. Response times improved by 60%.",
+    quote: "The AI solutions implemented by ZapIt have revolutionized our customer service processes. Response times improved by 60%.",
     author: "Michael Chen",
     company: "ServicePro Corp",
     role: "Customer Experience Manager",
@@ -78,7 +78,7 @@ export default function Home() {
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
           <div className="mx-auto max-w-2xl text-center">
             <h2 className="text-3xl font-bold tracking-tight text-foreground sm:text-4xl">
-              Why Choose ProcessPulse AI?
+              Why Choose ZapIt?
             </h2>
             <p className="mt-6 text-lg leading-8 text-muted-foreground">
               Our comprehensive AI solutions are designed to address the unique challenges of modern businesses.
