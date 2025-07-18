@@ -17,69 +17,69 @@ import {
 const services = [
   {
     icon: Bot,
-    title: "Process Automation",
-    description: "Automate repetitive tasks and workflows using intelligent AI agents and robotic process automation.",
+    title: "Workflow Audit & Automation Solutions", 
+    headline: "Stop the chaos. Start automating.",
+    description: "We start every engagement with a comprehensive audit of your team's workflows. From content creation to client management to back-office ops — we map, analyze, and find automation opportunities.",
     features: [
-      "Document processing automation",
-      "Workflow orchestration",
-      "Task scheduling and prioritization",
-      "Custom bot development"
-    ]
+      "Process Mapping",
+      "Automation Options (Google Apps Script, Zapier, Make, RPA, APIs)",
+      "SaaS Tool Integration", 
+      "Approval Flow Streamlining",
+      "Data Sync & Reporting Automation"
+    ],
+    keywords: "AI Workflow Automation India, Dubai, USA, Canada, Google Workspace Automation, SaaS Automation Services"
+  },
+  {
+    icon: Users,
+    title: "Prompt Engineering Coaching",
+    headline: "Turn AI into your team's assistant.",
+    description: "Your team learns how to write powerful prompts for AI tools like ChatGPT, Claude, Midjourney, and Gemini.",
+    features: [
+      "Live coaching sessions",
+      "Custom prompt libraries", 
+      "Use-case based training for content, research, marketing, design, client comms"
+    ],
+    keywords: "Prompt Engineering Training India, AI Training Dubai, ChatGPT Business Coaching, AI Content Training"
   },
   {
     icon: BarChart3,
-    title: "Data Analytics & Insights",
-    description: "Transform raw data into actionable insights with advanced analytics and machine learning.",
+    title: "Lean Six Sigma Consulting",
+    headline: "Continuous improvement powered by data.",
+    description: "We apply proven Lean Six Sigma frameworks to streamline your team's workflows:",
     features: [
-      "Predictive analytics",
-      "Real-time dashboards",
-      "Performance monitoring",
-      "Business intelligence reports"
-    ]
-  },
-  {
-    icon: Workflow,
-    title: "Process Optimization",
-    description: "Identify and eliminate inefficiencies in your current processes to maximize productivity.",
-    features: [
-      "Process mapping and analysis",
-      "Bottleneck identification",
-      "Resource allocation optimization",
-      "Performance benchmarking"
-    ]
-  },
-  {
-    icon: Brain,
-    title: "AI Strategy Consulting",
-    description: "Develop comprehensive AI adoption strategies tailored to your business objectives.",
-    features: [
-      "AI readiness assessment",
-      "Technology roadmap planning",
-      "ROI analysis and projections",
-      "Change management support"
-    ]
+      "DMAIC Methodology",
+      "Process Bottleneck Analysis",
+      "Task Optimization",
+      "Measurement Frameworks", 
+      "Data-backed Recommendations"
+    ],
+    keywords: "Lean Six Sigma India, Process Improvement Consulting Dubai, DMAIC Automation USA"
   },
   {
     icon: Shield,
-    title: "Compliance & Risk Management",
-    description: "Ensure your AI implementations meet regulatory requirements and minimize operational risk.",
+    title: "Retainer Support",
+    headline: "Long-term support. Constant optimization.",
+    description: "As your business grows, we continue to refine and optimize your automations and workflows:",
     features: [
-      "Regulatory compliance audits",
-      "Risk assessment frameworks",
-      "Data governance policies",
-      "Security implementation"
-    ]
+      "Monthly monitoring",
+      "New AI tool integration",
+      "Ongoing coaching",
+      "Quarterly process tune-ups"
+    ],
+    keywords: "AI Retainer Services India, Ongoing Automation Dubai, Monthly AI Support USA"
   },
   {
-    icon: Zap,
-    title: "Integration Services",
-    description: "Seamlessly integrate AI solutions with your existing technology infrastructure.",
+    icon: Target,
+    title: "Video & Imaging AI Advisory",
+    headline: "Advice on how to leverage AI for creative workflows.",
+    description: "We guide your video & graphics teams on available AI-powered tools for:",
     features: [
-      "API development and integration",
-      "Legacy system modernization",
-      "Cloud migration services",
-      "Third-party platform connections"
-    ]
+      "AI Video Editing",
+      "AI Image Generation", 
+      "AI-Based Tagging & Archiving",
+      "Midjourney, Runway, Descript, Adobe Firefly"
+    ],
+    keywords: "AI Video Editing India, Creative AI Consulting Dubai"
   }
 ];
 
@@ -124,12 +124,11 @@ export default function Services() {
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
           <div className="mx-auto max-w-4xl text-center">
             <h1 className="text-4xl font-bold tracking-tight text-foreground sm:text-6xl">
-              Comprehensive AI Solutions for{" "}
-              <span className="text-accent">Every Business Need</span>
+              See How We Work
             </h1>
             <p className="mt-6 text-lg leading-8 text-muted-foreground max-w-2xl mx-auto">
-              From strategy to implementation, we provide end-to-end AI services that transform 
-              how your organization operates and competes.
+              From workflow audits to ongoing support, we provide comprehensive AI automation services that transform 
+              how your team works and scales.
             </p>
           </div>
         </div>
@@ -147,27 +146,40 @@ export default function Services() {
             </p>
           </div>
           
-          <div className="grid grid-cols-1 gap-8 lg:grid-cols-2 xl:grid-cols-3">
-            {services.map((service) => (
-              <Card key={service.title} className="h-full shadow-lg hover:shadow-xl smooth-transition">
-                <CardHeader>
-                  <service.icon className="h-12 w-12 text-accent mb-4" />
-                  <CardTitle className="text-xl">{service.title}</CardTitle>
-                  <CardDescription className="text-base">
-                    {service.description}
-                  </CardDescription>
-                </CardHeader>
-                <CardContent>
-                  <ul className="space-y-2">
-                    {service.features.map((feature, index) => (
-                      <li key={index} className="flex items-center text-sm text-muted-foreground">
-                        <div className="w-1.5 h-1.5 bg-accent rounded-full mr-3 flex-shrink-0" />
-                        {feature}
-                      </li>
-                    ))}
-                  </ul>
-                </CardContent>
-              </Card>
+          <div className="space-y-16">
+            {services.map((service, index) => (
+              <div key={service.title} className={`grid grid-cols-1 gap-12 lg:grid-cols-2 ${index % 2 === 1 ? 'lg:grid-flow-col-dense' : ''}`}>
+                <div className={`${index % 2 === 1 ? 'lg:col-start-2' : ''}`}>
+                  <Card className="h-full shadow-lg">
+                    <CardHeader>
+                      <service.icon className="h-12 w-12 text-accent mb-4" />
+                      <CardTitle className="text-2xl">{service.title}</CardTitle>
+                      <CardDescription className="text-lg font-semibold text-accent">
+                        {service.headline}
+                      </CardDescription>
+                    </CardHeader>
+                    <CardContent>
+                      <p className="text-muted-foreground mb-6">{service.description}</p>
+                      <ul className="space-y-3">
+                        {service.features.map((feature, featureIndex) => (
+                          <li key={featureIndex} className="flex items-start text-sm text-muted-foreground">
+                            <div className="w-1.5 h-1.5 bg-accent rounded-full mr-3 mt-2 flex-shrink-0" />
+                            {feature}
+                          </li>
+                        ))}
+                      </ul>
+                      <div className="mt-6 pt-4 border-t border-border">
+                        <p className="text-xs text-muted-foreground/80">
+                          <strong>SEO Keywords:</strong> {service.keywords}
+                        </p>
+                      </div>
+                    </CardContent>
+                  </Card>
+                </div>
+                <div className={`flex items-center ${index % 2 === 1 ? 'lg:col-start-1' : ''}`}>
+                  <div className="text-6xl opacity-20">{String(index + 1).padStart(2, '0')}</div>
+                </div>
+              </div>
             ))}
           </div>
         </div>
@@ -218,13 +230,13 @@ export default function Services() {
             <div className="mt-10 flex items-center justify-center gap-x-6">
               <Button asChild size="lg" className="text-lg px-8 py-3">
                 <Link to="/contact">
-                  Start Your AI Journey
-                  <ArrowRight className="ml-2 h-5 w-5" />
-                </Link>
-              </Button>
-              <Button asChild variant="outline" size="lg" className="text-lg px-8 py-3">
-                <Link to="/industries">View Industries</Link>
-              </Button>
+              Schedule a Free Workflow Audit
+              <ArrowRight className="ml-2 h-5 w-5" />
+            </Link>
+          </Button>
+          <Button asChild variant="outline" size="lg" className="text-lg px-8 py-3">
+            <Link to="/about">Learn About Us</Link>
+          </Button>
             </div>
           </div>
         </div>

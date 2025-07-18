@@ -4,10 +4,33 @@ import { Link } from "react-router-dom";
 import { Users, Award, Globe, TrendingUp, ArrowRight } from "lucide-react";
 
 const stats = [
-  { label: "Years of Experience", value: "10+" },
-  { label: "AI Specialists", value: "50+" },
-  { label: "Projects Completed", value: "500+" },
-  { label: "Industries Served", value: "25+" },
+  { label: "Global Locations", value: "4" },
+  { label: "Hours Saved for Clients", value: "10,000+" },
+  { label: "Projects Completed", value: "200+" },
+  { label: "Client Satisfaction", value: "98%" },
+];
+
+const locations = [
+  {
+    flag: "🇮🇳",
+    country: "India",
+    cities: "Mumbai, Bangalore, Hyderabad"
+  },
+  {
+    flag: "🇦🇪", 
+    country: "Dubai / UAE",
+    cities: "Dubai"
+  },
+  {
+    flag: "🇺🇸",
+    country: "USA", 
+    cities: "New York, California"
+  },
+  {
+    flag: "🇨🇦",
+    country: "Canada",
+    cities: "Toronto"
+  }
 ];
 
 const values = [
@@ -101,12 +124,11 @@ export default function About() {
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
           <div className="mx-auto max-w-4xl text-center">
             <h1 className="text-4xl font-bold tracking-tight text-foreground sm:text-6xl">
-              Pioneering AI Solutions for{" "}
-              <span className="text-accent">Business Excellence</span>
+              The ZapIt Story
             </h1>
             <p className="mt-6 text-lg leading-8 text-muted-foreground max-w-2xl mx-auto">
-              For over a decade, we've been at the forefront of AI innovation, helping organizations 
-              transform their operations and achieve unprecedented efficiency gains.
+              Born from firsthand experience in solving complex operations problems for companies across continents. 
+              Our team blends technical, business, and Lean expertise to help growing businesses simplify operations and empower people.
             </p>
           </div>
         </div>
@@ -134,23 +156,20 @@ export default function About() {
           <div className="mx-auto max-w-4xl">
             <div className="text-center">
               <h2 className="text-3xl font-bold tracking-tight text-foreground sm:text-4xl">
-                Our Mission
+                Our Local Teams
               </h2>
               <p className="mt-6 text-xl leading-8 text-muted-foreground">
-                To democratize artificial intelligence and make advanced AI solutions accessible to 
-                organizations of all sizes, enabling them to compete and thrive in the digital economy.
+                Global presence with local expertise to serve you in your time zone and understand your regional business needs.
               </p>
             </div>
             
             <div className="mt-16 grid grid-cols-1 gap-8 lg:grid-cols-2">
-              {values.map((value) => (
-                <div key={value.title} className="flex">
-                  <div className="flex-shrink-0">
-                    <value.icon className="h-8 w-8 text-accent" />
-                  </div>
-                  <div className="ml-4">
-                    <h3 className="text-lg font-semibold text-foreground">{value.title}</h3>
-                    <p className="mt-2 text-muted-foreground">{value.description}</p>
+              {locations.map((location) => (
+                <div key={location.country} className="flex items-center p-6 bg-card rounded-lg shadow-lg">
+                  <div className="text-4xl mr-4">{location.flag}</div>
+                  <div>
+                    <h3 className="text-lg font-semibold text-foreground">{location.country}</h3>
+                    <p className="mt-1 text-muted-foreground">{location.cities}</p>
                   </div>
                 </div>
               ))}
@@ -159,66 +178,56 @@ export default function About() {
         </div>
       </section>
 
-      {/* Team Section */}
+      {/* Values Section */}
       <section className="py-24 bg-background">
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
           <div className="mx-auto max-w-2xl text-center mb-16">
             <h2 className="text-3xl font-bold tracking-tight text-foreground sm:text-4xl">
-              Meet Our Leadership Team
+              Our Approach
             </h2>
             <p className="mt-6 text-lg leading-8 text-muted-foreground">
-              Industry experts with deep experience in AI, technology, and business transformation.
+              We blend technical expertise with business acumen to deliver practical AI solutions.
             </p>
           </div>
           
-          <div className="grid grid-cols-1 gap-8 lg:grid-cols-2 xl:grid-cols-4">
-            {team.map((member) => (
-              <Card key={member.name} className="shadow-lg">
-                <CardContent className="p-6">
-                  <img
-                    className="w-20 h-20 rounded-full mx-auto mb-4 object-cover"
-                    src={member.image}
-                    alt={member.name}
-                  />
-                  <div className="text-center">
-                    <h3 className="text-lg font-semibold text-foreground">{member.name}</h3>
-                    <p className="text-sm text-accent font-medium mb-3">{member.role}</p>
-                    <p className="text-sm text-muted-foreground">{member.bio}</p>
-                  </div>
-                </CardContent>
-              </Card>
+          <div className="grid grid-cols-1 gap-8 lg:grid-cols-2">
+            {values.map((value) => (
+              <div key={value.title} className="flex">
+                <div className="flex-shrink-0">
+                  <value.icon className="h-8 w-8 text-accent" />
+                </div>
+                <div className="ml-4">
+                  <h3 className="text-lg font-semibold text-foreground">{value.title}</h3>
+                  <p className="mt-2 text-muted-foreground">{value.description}</p>
+                </div>
+              </div>
             ))}
           </div>
         </div>
       </section>
 
-      {/* Timeline Section */}
+      {/* Mission Section */}
       <section className="py-24 gradient-bg">
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
-          <div className="mx-auto max-w-2xl text-center mb-16">
-            <h2 className="text-3xl font-bold tracking-tight text-foreground sm:text-4xl">
-              Our Journey
+          <div className="mx-auto max-w-4xl text-center">
+            <h2 className="text-3xl font-bold tracking-tight text-foreground sm:text-4xl mb-8">
+              The ZapIt Founding Story
             </h2>
-            <p className="mt-6 text-lg leading-8 text-muted-foreground">
-              A decade of innovation, growth, and successful AI transformations.
-            </p>
-          </div>
-          
-          <div className="relative">
-            <div className="absolute left-1/2 transform -translate-x-0.5 w-0.5 h-full bg-border"></div>
-            <div className="space-y-12">
-              {milestones.map((milestone, index) => (
-                <div key={milestone.year} className={`relative flex items-center ${index % 2 === 0 ? 'justify-start' : 'justify-end'}`}>
-                  <div className={`w-5/12 ${index % 2 === 0 ? 'text-right pr-8' : 'text-left pl-8'}`}>
-                    <div className="bg-card rounded-lg p-6 shadow-lg">
-                      <div className="text-2xl font-bold text-accent mb-2">{milestone.year}</div>
-                      <h3 className="text-lg font-semibold text-foreground mb-2">{milestone.title}</h3>
-                      <p className="text-muted-foreground">{milestone.description}</p>
-                    </div>
-                  </div>
-                  <div className="absolute left-1/2 transform -translate-x-1/2 w-4 h-4 bg-accent rounded-full border-4 border-background"></div>
-                </div>
-              ))}
+            <div className="text-lg leading-8 text-muted-foreground space-y-6">
+              <p>
+                Born from firsthand experience in solving complex operations problems for companies across continents. 
+                Our founders witnessed the same challenges repeatedly: teams drowning in manual processes, inefficient workflows, 
+                and missed opportunities for automation.
+              </p>
+              <p>
+                After successfully implementing AI and automation solutions for Fortune 500 companies and growing startups alike, 
+                we realized there was a gap in the market for practical, regional-focused AI consulting that truly understood 
+                local business contexts.
+              </p>
+              <p>
+                Our team blends technical, business, and Lean expertise to help growing businesses simplify operations and 
+                empower people. We don't just implement technology - we transform how teams work, think, and scale.
+              </p>
             </div>
           </div>
         </div>

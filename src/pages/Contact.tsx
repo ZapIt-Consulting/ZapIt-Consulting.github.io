@@ -14,36 +14,42 @@ const contactMethods = [
     icon: Mail,
     title: "Email",
     description: "Send us a detailed message",
-    contact: "hello@zapit.ai",
+    contact: "zapitlabs@gmail.com",
     action: "Send email"
   },
   {
     icon: Calendar,
-    title: "Schedule Meeting",
+    title: "Calendly Integration",
     description: "Book a 30-minute consultation",
-    contact: "Available Mon-Fri, 9AM-5PM PST",
-    action: "Book meeting"
+    contact: "Available across time zones",
+    action: "Schedule demo"
   }
 ];
 
 const offices = [
   {
-    city: "San Francisco",
-    address: "123 Innovation Drive, Suite 400",
-    region: "CA 94107",
-    phone: "+1 (555) 123-4567"
+    city: "India",
+    address: "Mumbai, Bangalore, Hyderabad",
+    region: "Multiple locations",
+    phone: "+91 (555) 123-4567"
   },
   {
-    city: "New York",
-    address: "456 Tech Avenue, Floor 15",
-    region: "NY 10001",
-    phone: "+1 (555) 234-5678"
+    city: "Dubai / UAE",
+    address: "Business District",
+    region: "UAE",
+    phone: "+971 (555) 234-5678"
   },
   {
-    city: "London",
-    address: "789 AI Street, 5th Floor",
-    region: "EC2A 4BX, UK",
-    phone: "+44 20 1234 5678"
+    city: "USA",
+    address: "New York, California",
+    region: "Multiple locations",
+    phone: "+1 (555) 345-6789"
+  },
+  {
+    city: "Canada",
+    address: "Toronto",
+    region: "ON",
+    phone: "+1 (555) 456-7890"
   }
 ];
 
@@ -74,12 +80,11 @@ export default function Contact() {
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
           <div className="mx-auto max-w-4xl text-center">
             <h1 className="text-4xl font-bold tracking-tight text-foreground sm:text-6xl">
-              Let's Transform Your Business{" "}
-              <span className="text-accent">Together</span>
+              Schedule a Free Workflow Audit
             </h1>
             <p className="mt-6 text-lg leading-8 text-muted-foreground max-w-2xl mx-auto">
-              Ready to harness the power of AI? Get in touch with our experts to discuss 
-              your specific needs and learn how we can help you achieve your goals.
+              Ready to discover automation opportunities? Get in touch with our experts for a comprehensive 
+              workflow audit and personalized recommendations. Contact us via zapitlabs@gmail.com or zapitlabs.com.
             </p>
           </div>
         </div>
@@ -115,7 +120,7 @@ export default function Contact() {
             {/* Contact Form */}
             <div>
               <h2 className="text-3xl font-bold tracking-tight text-foreground sm:text-4xl mb-8">
-                Start Your AI Journey
+                Get Your Free Workflow Audit
               </h2>
               <Card className="shadow-xl">
                 <CardContent className="p-8">
@@ -127,15 +132,15 @@ export default function Contact() {
             {/* Additional Information */}
             <div className="space-y-8">
               <div>
-                <h3 className="text-2xl font-bold text-foreground mb-6">Why Choose Us?</h3>
+                <h3 className="text-2xl font-bold text-foreground mb-6">Contact Options</h3>
                 <div className="space-y-4">
                   <div className="flex items-start">
                     <div className="flex-shrink-0">
                       <div className="w-2 h-2 bg-accent rounded-full mt-2"></div>
                     </div>
                     <div className="ml-4">
-                      <h4 className="font-semibold text-foreground">Expert Team</h4>
-                      <p className="text-muted-foreground">50+ AI specialists with deep industry experience</p>
+                      <h4 className="font-semibold text-foreground">Contact Form</h4>
+                      <p className="text-muted-foreground">Fill out the form for detailed project discussions</p>
                     </div>
                   </div>
                   <div className="flex items-start">
@@ -143,8 +148,8 @@ export default function Contact() {
                       <div className="w-2 h-2 bg-accent rounded-full mt-2"></div>
                     </div>
                     <div className="ml-4">
-                      <h4 className="font-semibold text-foreground">Proven Results</h4>
-                      <p className="text-muted-foreground">500+ successful implementations across 25 industries</p>
+                      <h4 className="font-semibold text-foreground">Calendly Integration</h4>
+                      <p className="text-muted-foreground">Schedule a demo directly through our calendar</p>
                     </div>
                   </div>
                   <div className="flex items-start">
@@ -152,8 +157,8 @@ export default function Contact() {
                       <div className="w-2 h-2 bg-accent rounded-full mt-2"></div>
                     </div>
                     <div className="ml-4">
-                      <h4 className="font-semibold text-foreground">End-to-End Support</h4>
-                      <p className="text-muted-foreground">From strategy to implementation and ongoing optimization</p>
+                      <h4 className="font-semibold text-foreground">WhatsApp Chat</h4>
+                      <p className="text-muted-foreground">Instant messaging for quick questions (India/UAE)</p>
                     </div>
                   </div>
                 </div>
@@ -206,10 +211,10 @@ export default function Contact() {
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
           <div className="mx-auto max-w-2xl text-center mb-16">
             <h2 className="text-3xl font-bold tracking-tight text-foreground sm:text-4xl">
-              Our Offices
+              Our Local Teams
             </h2>
             <p className="mt-6 text-lg leading-8 text-muted-foreground">
-              Global presence with local expertise to serve you better.
+              Global presence with local expertise across time zones.
             </p>
           </div>
           
