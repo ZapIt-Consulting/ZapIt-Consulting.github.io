@@ -158,7 +158,7 @@ export default function Home() {
               {features.map((feature) => (
                 <div key={feature.title} className="flex flex-col">
                   <dt className="flex items-center gap-x-3 text-base font-semibold leading-7 text-foreground">
-                    <feature.icon className="h-5 w-5 flex-none text-accent" aria-hidden="true" />
+                    <feature.icon className="h-5 w-5 flex-none text-orange" aria-hidden="true" />
                     {feature.title}
                   </dt>
                   <dd className="mt-4 flex flex-auto flex-col text-base leading-7 text-muted-foreground">
@@ -186,8 +186,8 @@ export default function Home() {
             {services.map((service) => (
               <Link key={service.title} to={service.link} className="group">
                 <div className="flex flex-col items-center text-center p-6 rounded-lg hover:bg-background/50 smooth-transition">
-                  <service.icon className="h-8 w-8 text-accent mb-4" />
-                  <h3 className="text-lg font-semibold text-foreground group-hover:text-accent smooth-transition">
+                  <service.icon className="h-8 w-8 text-accent group-hover:text-yellow mb-4 smooth-transition" />
+                  <h3 className="text-lg font-semibold text-foreground group-hover:text-yellow smooth-transition">
                     {service.title}
                   </h3>
                 </div>
@@ -212,7 +212,7 @@ export default function Home() {
             <div className="grid grid-cols-1 gap-4 lg:grid-cols-2">
               {industries.map((industry, index) => (
                 <div key={index} className="flex items-center">
-                  <div className="w-2 h-2 bg-accent rounded-full mr-4"></div>
+                  <div className="w-2 h-2 bg-orange rounded-full mr-4"></div>
                   <span className="text-muted-foreground">{industry}</span>
                 </div>
               ))}
@@ -233,7 +233,7 @@ export default function Home() {
             <div className="grid grid-cols-1 gap-6">
               {differentiators.map((item, index) => (
                 <div key={index} className="flex items-start">
-                  <div className="w-2 h-2 bg-accent rounded-full mr-4 mt-2"></div>
+                  <div className="w-2 h-2 bg-yellow rounded-full mr-4 mt-2"></div>
                   <p className="text-muted-foreground">{item}</p>
                 </div>
               ))}
@@ -249,7 +249,7 @@ export default function Home() {
             {stats.map((stat) => (
               <div key={stat.label} className="mx-auto flex max-w-xs flex-col gap-y-4">
                 <dt className="text-base leading-7 text-muted-foreground">{stat.label}</dt>
-                <dd className="order-first text-3xl font-semibold tracking-tight text-accent sm:text-5xl">
+                <dd className="order-first text-3xl font-semibold tracking-tight text-orange sm:text-5xl">
                   {stat.value}
                 </dd>
               </div>
