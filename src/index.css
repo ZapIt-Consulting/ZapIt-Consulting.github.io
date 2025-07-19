@@ -8,94 +8,94 @@ All colors MUST be HSL.
 
 @layer base {
   :root {
-    /* AI Consulting Brand Colors - inspired by Hugin.io */
-    --background: 75 25% 94%;
-    --foreground: 240 10% 10%;
+    /* ZapIt Teal Color Palette */
+    --background: 0 0% 98%;
+    --foreground: 0 0% 10%;
 
     --card: 0 0% 100%;
-    --card-foreground: 240 10% 10%;
+    --card-foreground: 0 0% 10%;
 
     --popover: 0 0% 100%;
-    --popover-foreground: 240 10% 10%;
+    --popover-foreground: 0 0% 10%;
 
-    /* Primary - Deep sophisticated dark */
-    --primary: 240 10% 10%;
-    --primary-foreground: 0 0% 98%;
+    /* Primary - Very dark teal #023535 */
+    --primary: 180 77% 11%;
+    --primary-foreground: 0 0% 100%;
 
-    /* Secondary - Soft sage green */
-    --secondary: 75 20% 85%;
-    --secondary-foreground: 240 10% 10%;
+    /* Secondary - Lighter teal background */
+    --secondary: 179 100% 94%;
+    --secondary-foreground: 0 0% 10%;
 
-    /* Muted - Light warm background */
-    --muted: 75 25% 90%;
-    --muted-foreground: 240 5% 45%;
+    /* Muted - Subtle teal background */
+    --muted: 179 100% 96%;
+    --muted-foreground: 180 77% 25%;
 
-    /* Accent - Vibrant teal for CTAs */
-    --accent: 180 85% 45%;
-    --accent-foreground: 0 0% 100%;
+    /* Accent - Bright teal #0FC2C0 */
+    --accent: 179 88% 73%;
+    --accent-foreground: 0 0% 10%;
+
+    /* Teal palette variations */
+    --teal-bright: 179 88% 73%;     /* #0FC2C0 */
+    --teal-medium: 179 84% 66%;     /* #0CABA8 */
+    --teal-green: 166 100% 38%;     /* #00BF8C */
+    --teal-dark: 180 87% 18%;       /* #015958 */
+    --teal-darkest: 180 77% 11%;    /* #023535 */
 
     --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 210 40% 98%;
+    --destructive-foreground: 0 0% 98%;
 
-    --border: 75 15% 80%;
-    --input: 75 15% 88%;
-    --ring: 180 85% 45%;
+    --border: 179 30% 85%;
+    --input: 179 30% 90%;
+    --ring: 179 88% 73%;
 
     --radius: 0.5rem;
 
     --sidebar-background: 0 0% 98%;
-
-    --sidebar-foreground: 240 5.3% 26.1%;
-
-    --sidebar-primary: 240 5.9% 10%;
-
-    --sidebar-primary-foreground: 0 0% 98%;
-
-    --sidebar-accent: 240 4.8% 95.9%;
-
-    --sidebar-accent-foreground: 240 5.9% 10%;
-
-    --sidebar-border: 220 13% 91%;
-
-    --sidebar-ring: 217.2 91.2% 59.8%;
+    --sidebar-foreground: 0 0% 15%;
+    --sidebar-primary: 180 77% 11%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 179 100% 96%;
+    --sidebar-accent-foreground: 0 0% 10%;
+    --sidebar-border: 179 30% 85%;
+    --sidebar-ring: 179 88% 73%;
   }
 
   .dark {
-    --background: 240 15% 8%;
-    --foreground: 75 25% 92%;
+    --background: 180 77% 11%;
+    --foreground: 0 0% 98%;
 
-    --card: 240 12% 12%;
-    --card-foreground: 75 25% 92%;
+    --card: 180 87% 18%;
+    --card-foreground: 0 0% 98%;
 
-    --popover: 240 12% 12%;
-    --popover-foreground: 75 25% 92%;
+    --popover: 180 87% 18%;
+    --popover-foreground: 0 0% 98%;
 
-    --primary: 75 25% 92%;
-    --primary-foreground: 240 15% 8%;
+    --primary: 0 0% 98%;
+    --primary-foreground: 180 77% 11%;
 
-    --secondary: 240 8% 18%;
-    --secondary-foreground: 75 25% 92%;
+    --secondary: 180 87% 18%;
+    --secondary-foreground: 0 0% 98%;
 
-    --muted: 240 8% 15%;
-    --muted-foreground: 240 5% 65%;
+    --muted: 180 87% 15%;
+    --muted-foreground: 179 30% 70%;
 
-    --accent: 180 85% 45%;
-    --accent-foreground: 0 0% 100%;
+    --accent: 179 88% 73%;
+    --accent-foreground: 0 0% 10%;
 
     --destructive: 0 62.8% 30.6%;
-    --destructive-foreground: 210 40% 98%;
+    --destructive-foreground: 0 0% 98%;
 
-    --border: 240 8% 18%;
-    --input: 240 8% 18%;
-    --ring: 180 85% 45%;
-    --sidebar-background: 240 5.9% 10%;
-    --sidebar-foreground: 240 4.8% 95.9%;
-    --sidebar-primary: 224.3 76.3% 48%;
-    --sidebar-primary-foreground: 0 0% 100%;
-    --sidebar-accent: 240 3.7% 15.9%;
-    --sidebar-accent-foreground: 240 4.8% 95.9%;
-    --sidebar-border: 240 3.7% 15.9%;
-    --sidebar-ring: 217.2 91.2% 59.8%;
+    --border: 180 87% 18%;
+    --input: 180 87% 18%;
+    --ring: 179 88% 73%;
+    --sidebar-background: 180 77% 11%;
+    --sidebar-foreground: 0 0% 95%;
+    --sidebar-primary: 179 88% 73%;
+    --sidebar-primary-foreground: 0 0% 10%;
+    --sidebar-accent: 180 87% 15%;
+    --sidebar-accent-foreground: 0 0% 95%;
+    --sidebar-border: 180 87% 15%;
+    --sidebar-ring: 179 88% 73%;
   }
 }
 
@@ -111,11 +111,16 @@ All colors MUST be HSL.
 
   /* Custom gradient backgrounds */
   .gradient-bg {
-    background: linear-gradient(135deg, hsl(var(--background)) 0%, hsl(var(--muted)) 100%);
+    background: linear-gradient(135deg, hsl(var(--muted)) 0%, hsl(var(--secondary)) 100%);
   }
 
   .hero-gradient {
-    background: linear-gradient(135deg, hsl(var(--muted)) 0%, hsl(var(--background)) 50%, hsl(var(--secondary)) 100%);
+    background: linear-gradient(135deg, hsl(var(--teal-bright) / 0.1) 0%, hsl(var(--background)) 50%, hsl(var(--muted)) 100%);
+  }
+
+  /* Teal gradient utility */
+  .teal-gradient {
+    background: linear-gradient(135deg, hsl(var(--teal-bright)) 0%, hsl(var(--teal-green)) 50%, hsl(var(--teal-dark)) 100%);
   }
 
   /* Smooth animations */
