@@ -8,29 +8,29 @@ All colors MUST be HSL.
 
 @layer base {
   :root {
-    /* AI Consulting Brand Colors - inspired by Hugin.io */
-    --background: 75 25% 94%;
-    --foreground: 240 10% 10%;
+    /* Dark Teal Color Palette */
+    --background: 180 100% 11%; /* #023535 equivalent in HSL */
+    --foreground: 0 0% 95%;
 
-    --card: 0 0% 100%;
-    --card-foreground: 240 10% 10%;
+    --card: 180 90% 18%; /* #015958 equivalent in HSL */
+    --card-foreground: 0 0% 95%;
 
-    --popover: 0 0% 100%;
-    --popover-foreground: 240 10% 10%;
+    --popover: 180 90% 18%;
+    --popover-foreground: 0 0% 95%;
 
-    /* Primary - Deep sophisticated dark */
-    --primary: 240 10% 10%;
+    /* Primary - Darkest Teal */
+    --primary: 180 100% 11%; /* #023535 */
     --primary-foreground: 0 0% 98%;
 
-    /* Secondary - Soft sage green */
-    --secondary: 75 20% 85%;
-    --secondary-foreground: 240 10% 10%;
+    /* Secondary - Medium Dark Teal */
+    --secondary: 180 90% 18%; /* #015958 */
+    --secondary-foreground: 0 0% 95%;
 
-    /* Muted - Light warm background */
-    --muted: 75 25% 90%;
-    --muted-foreground: 240 5% 45%;
+    /* Muted - Lighter teal background */
+    --muted: 180 90% 18%;
+    --muted-foreground: 0 0% 80%;
 
-    /* Accent - Vibrant teal for CTAs */
+    /* Accent - Bright teal for CTAs */
     --accent: 180 85% 45%;
     --accent-foreground: 0 0% 100%;
 
@@ -61,23 +61,23 @@ All colors MUST be HSL.
   }
 
   .dark {
-    --background: 240 15% 8%;
-    --foreground: 75 25% 92%;
+    --background: 180 100% 11%; /* #023535 */
+    --foreground: 0 0% 95%;
 
-    --card: 240 12% 12%;
-    --card-foreground: 75 25% 92%;
+    --card: 180 90% 18%; /* #015958 */
+    --card-foreground: 0 0% 95%;
 
-    --popover: 240 12% 12%;
-    --popover-foreground: 75 25% 92%;
+    --popover: 180 90% 18%;
+    --popover-foreground: 0 0% 95%;
 
-    --primary: 75 25% 92%;
-    --primary-foreground: 240 15% 8%;
+    --primary: 180 100% 11%; /* #023535 */
+    --primary-foreground: 0 0% 98%;
 
-    --secondary: 240 8% 18%;
-    --secondary-foreground: 75 25% 92%;
+    --secondary: 180 90% 18%; /* #015958 */
+    --secondary-foreground: 0 0% 95%;
 
-    --muted: 240 8% 15%;
-    --muted-foreground: 240 5% 65%;
+    --muted: 180 90% 18%;
+    --muted-foreground: 0 0% 80%;
 
     --accent: 180 85% 45%;
     --accent-foreground: 0 0% 100%;
@@ -111,11 +111,11 @@ All colors MUST be HSL.
 
   /* Custom gradient backgrounds */
   .gradient-bg {
-    background: linear-gradient(135deg, hsl(var(--background)) 0%, hsl(var(--muted)) 100%);
+    background: linear-gradient(135deg, hsl(var(--secondary)) 0%, hsl(var(--background)) 100%);
   }
 
   .hero-gradient {
-    background: linear-gradient(135deg, hsl(var(--muted)) 0%, hsl(var(--background)) 50%, hsl(var(--secondary)) 100%);
+    background: linear-gradient(135deg, hsl(var(--background)) 0%, hsl(var(--secondary)) 50%, hsl(var(--muted)) 100%);
   }
 
   /* Smooth animations */
