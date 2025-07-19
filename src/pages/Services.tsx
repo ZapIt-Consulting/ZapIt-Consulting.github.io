@@ -168,11 +168,6 @@ export default function Services() {
                           </li>
                         ))}
                       </ul>
-                      <div className="mt-6 pt-4 border-t border-border">
-                        <p className="text-xs text-muted-foreground/80">
-                          <strong>SEO Keywords:</strong> {service.keywords}
-                        </p>
-                      </div>
                     </CardContent>
                   </Card>
                 </div>
