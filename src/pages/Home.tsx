@@ -40,37 +40,31 @@ const services = [
   {
     icon: Bot,
     title: "Workflow Audit & Recommendations",
-    emoji: "🔎",
     link: "/services"
   },
   {
     icon: Zap,
     title: "Automation Solution Implementation",
-    emoji: "⚙️", 
     link: "/services"
   },
   {
     icon: Users,
     title: "Prompt Engineering Coaching",
-    emoji: "✍️",
     link: "/services"
   },
   {
     icon: TrendingUp,
     title: "Lean Six Sigma Process Improvement",
-    emoji: "📊",
     link: "/services"
   },
   {
     icon: Shield,
     title: "Ongoing Support & Retainers",
-    emoji: "🔧",
     link: "/services"
   },
   {
     icon: Target,
     title: "Video & Imaging AI Advisory",
-    emoji: "🎞",
     link: "/services"
   }
 ];
@@ -192,7 +186,6 @@ export default function Home() {
             {services.map((service) => (
               <Link key={service.title} to={service.link} className="group">
                 <div className="flex flex-col items-center text-center p-6 rounded-lg hover:bg-background/50 smooth-transition">
-                  <div className="text-4xl mb-4">{service.emoji}</div>
                   <service.icon className="h-8 w-8 text-accent mb-4" />
                   <h3 className="text-lg font-semibold text-foreground group-hover:text-accent smooth-transition">
                     {service.title}
