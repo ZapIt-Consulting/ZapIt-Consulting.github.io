@@ -295,10 +295,10 @@ export default function Industries() {
               We work with businesses across all sectors. Let's discuss how AI can transform your specific industry.
             </p>
             <div className="mt-10 flex items-center justify-center gap-x-6">
-              <Button asChild size="lg" className="text-lg px-8 py-3">
+              <Button asChild variant="ghost" size="sm" className="text-lg px-8 py-3">
                 <Link to="/contact">
                   Discuss Your Industry
-                  <ArrowRight className="ml-2 h-5 w-5" />
+                  <ArrowRight className="ml-1 h-3 w-3" />
                 </Link>
               </Button>
               <Button asChild variant="outline" size="lg" className="text-lg px-8 py-3">
