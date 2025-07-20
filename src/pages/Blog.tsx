@@ -269,10 +269,10 @@ export default function Blog() {
               Turn insights into action. Let's discuss how these AI strategies can benefit your business.
             </p>
             <div className="mt-10 flex items-center justify-center gap-x-6">
-              <Button asChild size="lg" className="text-lg px-8 py-3">
+              <Button asChild variant="ghost" size="sm">
                 <Link to="/contact">
                   Get Expert Consultation
-                  <ArrowRight className="ml-2 h-5 w-5" />
+                  <ArrowRight className="ml-2 h-4 w-4" />
                 </Link>
               </Button>
             </div>
