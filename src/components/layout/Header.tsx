@@ -54,7 +54,7 @@ export default function Header() {
         
         <div className="hidden lg:flex lg:flex-1 lg:justify-end">
           <Button asChild variant="outline" className="mr-4">
-            <Link to="/contact">Get Started</Link>
+            <Link to="/contact">Unlock Efficiency</Link>
           </Button>
         </div>
       </nav>
@@ -98,7 +98,7 @@ export default function Header() {
                 <div className="py-6">
                   <Button asChild className="w-full">
                     <Link to="/contact" onClick={() => setMobileMenuOpen(false)}>
-                      Get Started
+                      Unlock Efficiency
                     </Link>
                   </Button>
                 </div>
