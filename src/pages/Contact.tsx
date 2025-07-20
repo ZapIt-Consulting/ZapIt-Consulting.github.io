@@ -82,7 +82,7 @@ export default function Contact() {
       {/* Contact Methods */}
       <section className="py-16 bg-background">
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
-          <div className="grid grid-cols-1 gap-8 lg:grid-cols-3">
+          <div className="grid grid-cols-1 gap-8 lg:grid-cols-2 place-items-center">
             {contactMethods.map((method) => (
               <Card key={method.title} className="text-center shadow-lg hover:shadow-xl smooth-transition">
                 <CardHeader>
