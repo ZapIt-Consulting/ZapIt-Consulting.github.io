@@ -76,10 +76,6 @@ export default function Footer() {
                 <span className="text-sm text-muted-foreground">hello@zapit.ai</span>
               </div>
               <div className="flex items-center space-x-3">
-                <Phone className="h-4 w-4 text-accent" />
-                <span className="text-sm text-muted-foreground">+1 (555) 123-4567</span>
-              </div>
-              <div className="flex items-center space-x-3">
                 <MapPin className="h-4 w-4 text-accent" />
                 <span className="text-sm text-muted-foreground">San Francisco, CA</span>
               </div>

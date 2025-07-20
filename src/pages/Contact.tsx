@@ -4,13 +4,6 @@ import { Mail, Phone, MapPin, Clock, MessageSquare, Calendar } from "lucide-reac
 
 const contactMethods = [
   {
-    icon: Phone,
-    title: "Phone",
-    description: "Speak directly with our AI consultants",
-    contact: "+1 (555) 123-4567",
-    action: "Call now"
-  },
-  {
     icon: Mail,
     title: "Email",
     description: "Send us a detailed message",
@@ -30,26 +23,22 @@ const offices = [
   {
     city: "India",
     address: "Mumbai, Bangalore, Hyderabad",
-    region: "Multiple locations",
-    phone: "+91 (555) 123-4567"
+    region: "Multiple locations"
   },
   {
     city: "Dubai / UAE",
     address: "Business District",
-    region: "UAE",
-    phone: "+971 (555) 234-5678"
+    region: "UAE"
   },
   {
     city: "USA",
     address: "New York, California",
-    region: "Multiple locations",
-    phone: "+1 (555) 345-6789"
+    region: "Multiple locations"
   },
   {
     city: "Canada",
     address: "Toronto",
-    region: "ON",
-    phone: "+1 (555) 456-7890"
+    region: "ON"
   }
 ];
 
@@ -231,7 +220,6 @@ export default function Contact() {
                   <div className="space-y-2">
                     <p className="text-muted-foreground">{office.address}</p>
                     <p className="text-muted-foreground">{office.region}</p>
-                    <p className="font-semibold text-foreground">{office.phone}</p>
                   </div>
                 </CardContent>
               </Card>
