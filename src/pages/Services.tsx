@@ -13,7 +13,6 @@ import {
   TrendingUp,
   ArrowRight
 } from "lucide-react";
-import implementationProcessEnhanced from "@/assets/implementation-process-enhanced.png";
 
 const services = [
   {
@@ -184,7 +183,7 @@ export default function Services() {
       {/* Process Section */}
       <section className="py-24 gradient-bg">
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
-          <div className="mx-auto max-w-2xl text-center mb-12">
+          <div className="mx-auto max-w-2xl text-center mb-16">
             <h2 className="text-3xl font-bold tracking-tight text-foreground sm:text-4xl">
               Our Implementation Process
             </h2>
@@ -193,17 +192,6 @@ export default function Services() {
             </p>
           </div>
           
-          {/* Process Graphic */}
-          <div className="mx-auto mb-16 max-w-5xl">
-            <img 
-              src={implementationProcessEnhanced} 
-              alt="6-step AI implementation process" 
-              className="w-full h-auto rounded-lg shadow-lg bg-transparent"
-              style={{ maxHeight: "90vh" }}
-            />
-          </div>
-          
-          {/* Process Steps Detail */}
           <div className="grid grid-cols-1 gap-8 lg:grid-cols-2 xl:grid-cols-3">
             {processSteps.map((step, index) => (
               <div key={step.step} className="relative">
