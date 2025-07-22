@@ -13,7 +13,7 @@ import {
   TrendingUp,
   ArrowRight
 } from "lucide-react";
-import implementationProcess from "@/assets/implementation-process.png";
+import implementationProcessEnhanced from "@/assets/implementation-process-enhanced.png";
 
 const services = [
   {
@@ -194,11 +194,12 @@ export default function Services() {
           </div>
           
           {/* Process Graphic */}
-          <div className="mx-auto mb-16 max-w-4xl">
+          <div className="mx-auto mb-16 max-w-5xl">
             <img 
-              src={implementationProcess} 
+              src={implementationProcessEnhanced} 
               alt="6-step AI implementation process" 
-              className="w-full h-auto rounded-lg shadow-lg" 
+              className="w-full h-auto rounded-lg shadow-lg bg-transparent"
+              style={{ maxHeight: "90vh" }}
             />
           </div>
           
