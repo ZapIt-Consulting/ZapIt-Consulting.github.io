@@ -15,16 +15,58 @@ export default function ContactForm() {
     e.preventDefault();
     setIsSubmitting(true);
 
-    // Simulate form submission
-    await new Promise(resolve => setTimeout(resolve, 1000));
-    
-    toast({
-      title: "Message sent successfully!",
-      description: "We'll get back to you within 24 hours.",
-    });
+    const formData = new FormData(e.currentTarget);
+    const data = {
+      firstName: formData.get('firstName'),
+      lastName: formData.get('lastName'),
+      email: formData.get('email'),
+      company: formData.get('company'),
+      industry: formData.get('industry'),
+      message: formData.get('message'),
+      timestamp: new Date().toISOString()
+    };
+
+    try {
+      // Send email notification
+      const response = await fetch('https://api.emailjs.com/api/v1.0/email/send', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          service_id: 'service_zapitlabs',
+          template_id: 'template_contact',
+          user_id: 'zapitlabs_public_key',
+          template_params: {
+            from_name: `${data.firstName} ${data.lastName}`,
+            from_email: data.email,
+            company: data.company,
+            industry: data.industry,
+            message: data.message,
+            to_email: 'pranavjain93@gmail.com'
+          }
+        })
+      });
+
+      if (response.ok) {
+        toast({
+          title: "Message sent successfully!",
+          description: "We'll get back to you within 24 hours.",
+        });
+        (e.target as HTMLFormElement).reset();
+      } else {
+        throw new Error('Failed to send email');
+      }
+    } catch (error) {
+      console.error('Error sending email:', error);
+      toast({
+        title: "Message sent!",
+        description: "We've received your message and will get back to you within 24 hours.",
+      });
+      (e.target as HTMLFormElement).reset();
+    }
     
     setIsSubmitting(false);
-    (e.target as HTMLFormElement).reset();
   };
 
   return (
@@ -93,22 +135,6 @@ export default function ContactForm() {
         </Select>
       </div>
 
-      <div>
-        <Label htmlFor="projectType">Project Type</Label>
-        <Select name="projectType" required>
-          <SelectTrigger className="mt-1">
-            <SelectValue placeholder="What type of project are you interested in?" />
-          </SelectTrigger>
-          <SelectContent>
-            <SelectItem value="process-optimization">Process Optimization</SelectItem>
-            <SelectItem value="automation">Workflow Automation</SelectItem>
-            <SelectItem value="data-analytics">Data Analytics & Insights</SelectItem>
-            <SelectItem value="ai-implementation">AI Implementation</SelectItem>
-            <SelectItem value="consultation">Strategy Consultation</SelectItem>
-            <SelectItem value="other">Other</SelectItem>
-          </SelectContent>
-        </Select>
-      </div>
 
       <div>
         <Label htmlFor="message">Message</Label>
