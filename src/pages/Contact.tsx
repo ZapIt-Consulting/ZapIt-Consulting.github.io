@@ -8,14 +8,8 @@ const contactMethods = [
     title: "Email",
     description: "Send us a detailed message",
     contact: "zapitlabs@gmail.com",
-    action: "Send email"
-  },
-  {
-    icon: Calendar,
-    title: "Calendly Integration",
-    description: "Book a 30-minute consultation",
-    contact: "Available across time zones",
-    action: "Schedule demo"
+    action: "Send email",
+    href: "mailto:zapitlabs@gmail.com?subject=Workflow Audit Inquiry&body=Hello ZapitLabs team,%0D%0A%0D%0AI'm interested in learning more about your AI automation services and would like to schedule a workflow audit.%0D%0A%0D%0APlease contact me at your earliest convenience.%0D%0A%0D%0AThank you!"
   }
 ];
 
@@ -82,22 +76,32 @@ export default function Contact() {
       {/* Contact Methods */}
       <section className="py-16 bg-background">
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
-          <div className="grid grid-cols-1 gap-8 lg:grid-cols-2 place-items-center">
-            {contactMethods.map((method) => (
-              <Card key={method.title} className="text-center shadow-lg hover:shadow-xl smooth-transition">
-                <CardHeader>
-                  <method.icon className="h-12 w-12 text-accent mx-auto mb-4" />
-                  <CardTitle className="text-xl">{method.title}</CardTitle>
-                  <CardDescription>{method.description}</CardDescription>
-                </CardHeader>
-                <CardContent>
-                  <p className="font-semibold text-foreground mb-2">{method.contact}</p>
-                  <a href="#" className="text-accent hover:text-accent/80 smooth-transition">
-                    {method.action} →
-                  </a>
-                </CardContent>
-              </Card>
-            ))}
+          <div className="mx-auto max-w-2xl text-center mb-12">
+            <h2 className="text-3xl font-bold tracking-tight text-foreground sm:text-4xl mb-4">
+              Get In Touch
+            </h2>
+            <p className="text-lg text-muted-foreground">
+              Ready to transform your business with AI? Contact our experts today.
+            </p>
+          </div>
+          
+          <div className="flex justify-center">
+            <Card className="text-center shadow-lg hover:shadow-xl smooth-transition max-w-md w-full">
+              <CardHeader>
+                <Mail className="h-12 w-12 text-accent mx-auto mb-4" />
+                <CardTitle className="text-xl">{contactMethods[0].title}</CardTitle>
+                <CardDescription>{contactMethods[0].description}</CardDescription>
+              </CardHeader>
+              <CardContent>
+                <p className="font-semibold text-foreground mb-4">{contactMethods[0].contact}</p>
+                <a 
+                  href={contactMethods[0].href} 
+                  className="inline-flex items-center justify-center rounded-md bg-accent text-accent-foreground hover:bg-accent/90 h-10 px-4 py-2 text-sm font-medium smooth-transition"
+                >
+                  {contactMethods[0].action} →
+                </a>
+              </CardContent>
+            </Card>
           </div>
         </div>
       </section>
