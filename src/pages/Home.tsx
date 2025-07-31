@@ -121,27 +121,28 @@ export default function Home() {
     <div className="min-h-screen">
       {/* Hero Section */}
       <section 
-        className="relative py-24 lg:py-32 bg-cover bg-center bg-no-repeat"
+        className="relative py-16 sm:py-20 lg:py-32 bg-cover bg-center bg-no-repeat"
         style={{ backgroundImage: 'url(/lovable-uploads/e66aff1b-b608-47e7-ae06-bf47981a4944.png)' }}
       >
         <div className="absolute inset-0 bg-black/50"></div>
-        <div className="relative z-10 mx-auto max-w-7xl px-6 lg:px-8">
+        <div className="relative z-10 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="mx-auto max-w-4xl text-center">
-            <h1 className="text-4xl font-bold tracking-tight text-foreground sm:text-6xl lg:text-7xl">
+            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold tracking-tight text-foreground">
               Smarter Systems. One Zap at a Time{" "}
               <span className="text-accent">⚡</span>
             </h1>
-            <p className="mt-6 text-lg leading-8 text-muted-foreground max-w-2xl mx-auto">
+            <p className="mt-4 sm:mt-6 text-base sm:text-lg leading-6 sm:leading-8 text-muted-foreground max-w-2xl mx-auto px-4">
               AI-Powered Automation Consulting. Free Your Team. Reclaim Your Time. Scale Your Business.
             </p>
-            <div className="mt-10 flex items-center justify-center gap-x-6">
-              <Button asChild size="lg" className="text-lg px-8 py-3">
+            <div className="mt-8 sm:mt-10 flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-x-6 px-4">
+              <Button asChild size="lg" className="w-full sm:w-auto text-base sm:text-lg px-6 sm:px-8 py-3">
                 <Link to="/contact">
-                  Schedule a Free Workflow Audit
-                  <ArrowRight className="ml-2 h-5 w-5" />
+                  <span className="hidden sm:inline">Schedule a Free Workflow Audit</span>
+                  <span className="sm:hidden">Free Workflow Audit</span>
+                  <ArrowRight className="ml-2 h-4 w-4 sm:h-5 sm:w-5" />
                 </Link>
               </Button>
-              <Button asChild variant="outline" size="lg" className="text-lg px-8 py-3">
+              <Button asChild variant="outline" size="lg" className="w-full sm:w-auto text-base sm:text-lg px-6 sm:px-8 py-3">
                 <Link to="/services">See How We Work</Link>
               </Button>
             </div>
@@ -150,22 +151,22 @@ export default function Home() {
       </section>
 
       {/* Features Section */}
-      <section className="py-24 bg-background">
-        <div className="mx-auto max-w-7xl px-6 lg:px-8">
+      <section className="py-16 sm:py-20 lg:py-24 bg-background">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="mx-auto max-w-2xl text-center">
-            <h2 className="text-3xl font-bold tracking-tight text-foreground sm:text-4xl">
+            <h2 className="text-2xl sm:text-3xl font-bold tracking-tight text-foreground lg:text-4xl">
               Why ZapIt?
             </h2>
           </div>
-          <div className="mx-auto mt-16 max-w-2xl sm:mt-20 lg:mt-24 lg:max-w-none">
-            <dl className="grid max-w-xl grid-cols-1 gap-x-8 gap-y-16 lg:max-w-none lg:grid-cols-3">
+          <div className="mx-auto mt-12 sm:mt-16 lg:mt-20 max-w-2xl lg:max-w-none">
+            <dl className="grid grid-cols-1 gap-6 sm:gap-8 sm:grid-cols-2 lg:grid-cols-3 lg:gap-x-8 lg:gap-y-16">
               {features.map((feature) => (
-                <div key={feature.title} className="flex flex-col">
-                  <dt className="flex items-center gap-x-3 text-base font-semibold leading-7 text-foreground">
+                <div key={feature.title} className="flex flex-col text-center sm:text-left">
+                  <dt className="flex items-center justify-center sm:justify-start gap-x-3 text-sm sm:text-base font-semibold leading-7 text-foreground">
                     <feature.icon className="h-5 w-5 flex-none text-orange" aria-hidden="true" />
                     {feature.title}
                   </dt>
-                  <dd className="mt-4 flex flex-auto flex-col text-base leading-7 text-muted-foreground">
+                  <dd className="mt-3 sm:mt-4 flex flex-auto flex-col text-sm sm:text-base leading-6 sm:leading-7 text-muted-foreground">
                     <p className="flex-auto">{feature.description}</p>
                   </dd>
                 </div>
@@ -176,22 +177,22 @@ export default function Home() {
       </section>
 
       {/* Services Section */}
-      <section className="gradient-bg py-24">
-        <div className="mx-auto max-w-7xl px-6 lg:px-8">
+      <section className="gradient-bg py-16 sm:py-20 lg:py-24">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="mx-auto max-w-2xl text-center">
-            <h2 className="text-3xl font-bold tracking-tight text-foreground sm:text-4xl">
+            <h2 className="text-2xl sm:text-3xl font-bold tracking-tight text-foreground lg:text-4xl">
               Our Services
             </h2>
-            <p className="mt-6 text-lg leading-8 text-muted-foreground">
+            <p className="mt-4 sm:mt-6 text-base sm:text-lg leading-6 sm:leading-8 text-muted-foreground">
               Use clickable icons linking to dedicated service pages
             </p>
           </div>
-          <div className="mx-auto mt-16 grid max-w-2xl grid-cols-1 gap-x-8 gap-y-8 lg:mx-0 lg:max-w-none lg:grid-cols-3">
+          <div className="mx-auto mt-12 sm:mt-16 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3 lg:gap-8 max-w-2xl lg:max-w-none">
             {services.map((service) => (
               <Link key={service.title} to={service.link} className="group">
-                <div className="flex flex-col items-center text-center p-6 rounded-lg hover:bg-background/50 smooth-transition">
-                  <service.icon className="h-8 w-8 text-accent group-hover:text-yellow mb-4 smooth-transition" />
-                  <h3 className="text-lg font-semibold text-foreground group-hover:text-yellow smooth-transition">
+                <div className="flex flex-col items-center text-center p-4 sm:p-6 rounded-lg hover:bg-background/50 smooth-transition">
+                  <service.icon className="h-6 w-6 sm:h-8 sm:w-8 text-accent group-hover:text-yellow mb-3 sm:mb-4 smooth-transition" />
+                  <h3 className="text-base sm:text-lg font-semibold text-foreground group-hover:text-yellow smooth-transition">
                     {service.title}
                   </h3>
                 </div>
@@ -202,22 +203,22 @@ export default function Home() {
       </section>
 
       {/* Industries Section */}
-      <section className="py-24 bg-background">
-        <div className="mx-auto max-w-7xl px-6 lg:px-8">
+      <section className="py-16 sm:py-20 lg:py-24 bg-background">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="mx-auto max-w-2xl text-center">
-            <h2 className="text-3xl font-bold tracking-tight text-foreground sm:text-4xl">
+            <h2 className="text-2xl sm:text-3xl font-bold tracking-tight text-foreground lg:text-4xl">
               Who We Help
             </h2>
-            <p className="mt-6 text-lg leading-8 text-muted-foreground">
+            <p className="mt-4 sm:mt-6 text-base sm:text-lg leading-6 sm:leading-8 text-muted-foreground">
               We serve growing teams in:
             </p>
           </div>
-          <div className="mx-auto mt-16 max-w-4xl">
-            <div className="grid grid-cols-1 gap-4 lg:grid-cols-2">
+          <div className="mx-auto mt-12 sm:mt-16 max-w-4xl">
+            <div className="grid grid-cols-1 gap-3 sm:gap-4 sm:grid-cols-2">
               {industries.map((industry, index) => (
                 <div key={index} className="flex items-center">
-                  <div className="w-2 h-2 bg-orange rounded-full mr-4"></div>
-                  <span className="text-muted-foreground">{industry}</span>
+                  <div className="w-2 h-2 bg-orange rounded-full mr-3 sm:mr-4 flex-shrink-0"></div>
+                  <span className="text-sm sm:text-base text-muted-foreground">{industry}</span>
                 </div>
               ))}
             </div>
@@ -226,19 +227,19 @@ export default function Home() {
       </section>
 
       {/* Differentiators Section */}
-      <section className="gradient-bg py-24">
-        <div className="mx-auto max-w-7xl px-6 lg:px-8">
+      <section className="gradient-bg py-16 sm:py-20 lg:py-24">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="mx-auto max-w-2xl text-center">
-            <h2 className="text-3xl font-bold tracking-tight text-foreground sm:text-4xl">
+            <h2 className="text-2xl sm:text-3xl font-bold tracking-tight text-foreground lg:text-4xl">
               The ZapIt Difference
             </h2>
           </div>
-          <div className="mx-auto mt-16 max-w-4xl">
-            <div className="grid grid-cols-1 gap-6">
+          <div className="mx-auto mt-12 sm:mt-16 max-w-4xl">
+            <div className="grid grid-cols-1 gap-4 sm:gap-6">
               {differentiators.map((item, index) => (
                 <div key={index} className="flex items-start">
-                  <div className="w-2 h-2 bg-yellow rounded-full mr-4 mt-2"></div>
-                  <p className="text-muted-foreground">{item}</p>
+                  <div className="w-2 h-2 bg-yellow rounded-full mr-3 sm:mr-4 mt-2 flex-shrink-0"></div>
+                  <p className="text-sm sm:text-base text-muted-foreground">{item}</p>
                 </div>
               ))}
             </div>
@@ -247,13 +248,13 @@ export default function Home() {
       </section>
 
       {/* Stats Section */}
-      <section className="py-24 bg-background">
-        <div className="mx-auto max-w-7xl px-6 lg:px-8">
-          <dl className="mx-auto grid max-w-2xl grid-cols-1 gap-x-8 gap-y-16 text-center lg:mx-0 lg:max-w-none lg:grid-cols-4">
+      <section className="py-16 sm:py-20 lg:py-24 bg-background">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+          <dl className="mx-auto grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-4 text-center max-w-2xl lg:max-w-none">
             {stats.map((stat) => (
-              <div key={stat.label} className="mx-auto flex max-w-xs flex-col gap-y-4">
-                <dt className="text-base leading-7 text-muted-foreground">{stat.label}</dt>
-                <dd className="order-first text-3xl font-semibold tracking-tight text-orange sm:text-5xl">
+              <div key={stat.label} className="mx-auto flex max-w-xs flex-col gap-y-3 sm:gap-y-4">
+                <dt className="text-sm sm:text-base leading-6 sm:leading-7 text-muted-foreground">{stat.label}</dt>
+                <dd className="order-first text-2xl sm:text-3xl lg:text-4xl xl:text-5xl font-semibold tracking-tight text-orange">
                   {stat.value}
                 </dd>
               </div>
@@ -263,23 +264,23 @@ export default function Home() {
       </section>
 
       {/* Testimonials Section */}
-      <section className="py-24 bg-background">
-        <div className="mx-auto max-w-7xl px-6 lg:px-8">
+      <section className="py-16 sm:py-20 lg:py-24 bg-background">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="mx-auto max-w-2xl text-center">
-            <h2 className="text-3xl font-bold tracking-tight text-foreground sm:text-4xl">
+            <h2 className="text-2xl sm:text-3xl font-bold tracking-tight text-foreground lg:text-4xl">
               Client Wins
             </h2>
           </div>
-          <div className="mx-auto mt-16 grid max-w-2xl grid-cols-1 gap-8 lg:mx-0 lg:max-w-none lg:grid-cols-3">
+          <div className="mx-auto mt-12 sm:mt-16 grid grid-cols-1 gap-6 sm:gap-8 md:grid-cols-2 lg:grid-cols-3 max-w-2xl lg:max-w-none">
             {testimonials.map((testimonial, index) => (
               <Card key={index} className="shadow-lg">
-                <CardContent className="p-8">
-                  <blockquote className="text-lg leading-8 text-muted-foreground">
+                <CardContent className="p-4 sm:p-6 lg:p-8">
+                  <blockquote className="text-sm sm:text-base lg:text-lg leading-6 sm:leading-7 lg:leading-8 text-muted-foreground">
                     "{testimonial.quote}"
                   </blockquote>
-                  <div className="mt-6">
-                    <div className="font-semibold text-foreground">{testimonial.author}</div>
-                    <div className="text-sm text-muted-foreground">
+                  <div className="mt-4 sm:mt-6">
+                    <div className="text-sm sm:text-base font-semibold text-foreground">{testimonial.author}</div>
+                    <div className="text-xs sm:text-sm text-muted-foreground">
                       {testimonial.role}, {testimonial.company}
                     </div>
                   </div>
@@ -291,20 +292,21 @@ export default function Home() {
       </section>
 
       {/* CTA Section */}
-      <section className="hero-gradient py-24">
-        <div className="mx-auto max-w-7xl px-6 lg:px-8">
+      <section className="hero-gradient py-16 sm:py-20 lg:py-24">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="mx-auto max-w-2xl text-center">
-            <h2 className="text-3xl font-bold tracking-tight text-foreground sm:text-4xl">
+            <h2 className="text-2xl sm:text-3xl font-bold tracking-tight text-foreground lg:text-4xl">
               Ready to Transform Your Business?
             </h2>
-            <p className="mt-6 text-lg leading-8 text-muted-foreground">
+            <p className="mt-4 sm:mt-6 text-base sm:text-lg leading-6 sm:leading-8 text-muted-foreground px-4">
               Join hundreds of companies that have already revolutionized their operations with our AI solutions.
             </p>
-            <div className="mt-10 flex items-center justify-center gap-x-6">
-              <Button asChild size="lg" className="text-lg px-8 py-3">
+            <div className="mt-8 sm:mt-10 flex items-center justify-center px-4">
+              <Button asChild size="lg" className="w-full sm:w-auto text-base sm:text-lg px-6 sm:px-8 py-3">
                 <Link to="/contact">
-                  Schedule a Free Consultation
-                  <ArrowRight className="ml-2 h-5 w-5" />
+                  <span className="hidden sm:inline">Schedule a Free Consultation</span>
+                  <span className="sm:hidden">Free Consultation</span>
+                  <ArrowRight className="ml-2 h-4 w-4 sm:h-5 sm:w-5" />
                 </Link>
               </Button>
             </div>
