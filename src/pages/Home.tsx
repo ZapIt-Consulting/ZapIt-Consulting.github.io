@@ -124,7 +124,7 @@ export default function Home() {
         className="relative py-24 lg:py-32 bg-cover bg-center bg-no-repeat"
         style={{ backgroundImage: 'url(/lovable-uploads/e66aff1b-b608-47e7-ae06-bf47981a4944.png)' }}
       >
-        <div className="absolute inset-0 bg-black/20"></div>
+        <div className="absolute inset-0 bg-black/50"></div>
         <div className="relative z-10 mx-auto max-w-7xl px-6 lg:px-8">
           <div className="mx-auto max-w-4xl text-center">
             <h1 className="text-4xl font-bold tracking-tight text-foreground sm:text-6xl lg:text-7xl">
