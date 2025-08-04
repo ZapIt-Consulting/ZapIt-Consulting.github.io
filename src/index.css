@@ -8,44 +8,44 @@ All colors MUST be HSL.
 
 @layer base {
   :root {
-    /* New Color Palette - Light Mode */
-    --background: 0 0% 100%; /* White #FFFFFF */
-    --foreground: 214 25% 13%; /* Dark Blue #171E29 */
+    /* Dark Teal Color Palette */
+    --background: 180 100% 11%; /* #023535 equivalent in HSL */
+    --foreground: 0 0% 95%;
 
-    --card: 0 0% 100%; /* White */
-    --card-foreground: 214 25% 13%; /* Dark Blue */
+    --card: 180 90% 18%; /* #015958 equivalent in HSL */
+    --card-foreground: 0 0% 95%;
 
-    --popover: 0 0% 100%; /* White */
-    --popover-foreground: 214 25% 13%; /* Dark Blue */
+    --popover: 180 90% 18%;
+    --popover-foreground: 0 0% 95%;
 
-    /* Primary - Dark Blue Teal */
-    --primary: 196 30% 24%; /* #284451 */
-    --primary-foreground: 0 0% 100%; /* White */
+    /* Primary - Darkest Teal */
+    --primary: 180 100% 11%; /* #023535 */
+    --primary-foreground: 0 0% 98%;
 
-    /* Secondary - Slightly lighter version of primary */
-    --secondary: 196 25% 35%; /* Lighter variation of #284451 */
-    --secondary-foreground: 0 0% 100%; /* White */
+    /* Secondary - Medium Dark Teal */
+    --secondary: 180 90% 18%; /* #015958 */
+    --secondary-foreground: 0 0% 95%;
 
-    /* Muted - Very light gray */
-    --muted: 196 10% 95%; /* Light variation */
-    --muted-foreground: 196 30% 24%; /* Primary color */
+    /* Muted - Lighter teal background */
+    --muted: 180 90% 18%;
+    --muted-foreground: 0 0% 80%;
 
-    /* Accent - Gold for highlights and hover states */
-    --accent: 48 98% 65%; /* #FED750 */
-    --accent-foreground: 214 25% 13%; /* Dark text on gold */
+    /* Accent - Bright teal for CTAs */
+    --accent: 180 85% 45%;
+    --accent-foreground: 0 0% 100%;
 
     /* Orange and Yellow accent colors */
     --orange: 25 95% 60%;
     --orange-foreground: 0 0% 100%;
-    --yellow: 48 98% 65%; /* Same as accent - #FED750 */
-    --yellow-foreground: 214 25% 13%; /* Dark text */
+    --yellow: 45 95% 65%;
+    --yellow-foreground: 0 0% 10%;
 
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 210 40% 98%;
 
-    --border: 196 20% 85%; /* Light border */
-    --input: 196 15% 90%; /* Light input background */
-    --ring: 48 98% 65%; /* Gold ring - #FED750 */
+    --border: 75 15% 80%;
+    --input: 75 15% 88%;
+    --ring: 180 85% 45%;
 
     --radius: 0.5rem;
 
@@ -67,40 +67,39 @@ All colors MUST be HSL.
   }
 
   .dark {
-    /* Dark Mode - Very Dark Blue Background */
-    --background: 214 25% 13%; /* #171E29 */
-    --foreground: 0 0% 100%; /* White */
+    --background: 180 100% 11%; /* #023535 */
+    --foreground: 0 0% 95%;
 
-    --card: 196 30% 24%; /* #284451 */
-    --card-foreground: 0 0% 100%; /* White */
+    --card: 180 90% 18%; /* #015958 */
+    --card-foreground: 0 0% 95%;
 
-    --popover: 196 30% 24%; /* #284451 */
-    --popover-foreground: 0 0% 100%; /* White */
+    --popover: 180 90% 18%;
+    --popover-foreground: 0 0% 95%;
 
-    --primary: 196 30% 24%; /* #284451 */
-    --primary-foreground: 0 0% 100%; /* White */
+    --primary: 180 100% 11%; /* #023535 */
+    --primary-foreground: 0 0% 98%;
 
-    --secondary: 196 25% 35%; /* Lighter variation */
-    --secondary-foreground: 0 0% 100%; /* White */
+    --secondary: 180 90% 18%; /* #015958 */
+    --secondary-foreground: 0 0% 95%;
 
-    --muted: 196 30% 18%; /* Darker variation */
-    --muted-foreground: 0 0% 80%; /* Light gray */
+    --muted: 180 90% 18%;
+    --muted-foreground: 0 0% 80%;
 
-    --accent: 48 98% 65%; /* #FED750 */
-    --accent-foreground: 214 25% 13%; /* Dark text on gold */
+    --accent: 180 85% 45%;
+    --accent-foreground: 0 0% 100%;
 
     /* Orange and Yellow accent colors */
     --orange: 25 95% 60%;
     --orange-foreground: 0 0% 100%;
-    --yellow: 48 98% 65%; /* Same as accent - #FED750 */
-    --yellow-foreground: 214 25% 13%; /* Dark text */
+    --yellow: 45 95% 65%;
+    --yellow-foreground: 0 0% 10%;
 
     --destructive: 0 62.8% 30.6%;
     --destructive-foreground: 210 40% 98%;
 
-    --border: 196 20% 30%; /* Darker border for dark mode */
-    --input: 196 20% 30%; /* Darker input background */
-    --ring: 48 98% 65%; /* Gold ring - #FED750 */
+    --border: 240 8% 18%;
+    --input: 240 8% 18%;
+    --ring: 180 85% 45%;
     --sidebar-background: 240 5.9% 10%;
     --sidebar-foreground: 240 4.8% 95.9%;
     --sidebar-primary: 224.3 76.3% 48%;
