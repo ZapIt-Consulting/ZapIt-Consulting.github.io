@@ -27,24 +27,19 @@ export default function ContactForm() {
     };
 
     try {
-      // Send email notification
-      const response = await fetch('https://api.emailjs.com/api/v1.0/email/send', {
+      // Send email via Supabase Edge Function
+      const response = await fetch('/functions/v1/send-contact-email', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
         },
         body: JSON.stringify({
-          service_id: 'service_zapitlabs',
-          template_id: 'template_contact',
-          user_id: 'zapitlabs_public_key',
-          template_params: {
-            from_name: `${data.firstName} ${data.lastName}`,
-            from_email: data.email,
-            company: data.company,
-            industry: data.industry,
-            message: data.message,
-            to_email: 'pranavjain93@gmail.com'
-          }
+          firstName: data.firstName,
+          lastName: data.lastName,
+          email: data.email,
+          company: data.company,
+          industry: data.industry,
+          message: data.message
         })
       });
 
