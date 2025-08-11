@@ -45,7 +45,7 @@ Submitted at: ${new Date().toISOString()}
       },
       body: JSON.stringify({
         from: 'ZapitLabs Contact <noreply@zapitlabs.com>',
-        to: ['pranavjain93@gmail.com'],
+        to: ['team@zapitlabs.com'],
         subject: `New Contact Form Submission from ${firstName} ${lastName}`,
         text: emailBody,
         html: emailBody.replace(/\n/g, '<br>'),
