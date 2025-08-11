@@ -124,7 +124,7 @@ export default function About() {
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
           <div className="mx-auto max-w-4xl text-center">
             <h1 className="text-4xl font-bold tracking-tight text-foreground sm:text-6xl">
-              The ZapIt Story
+              The Zapit Labs Story
             </h1>
             <p className="mt-6 text-lg leading-8 text-muted-foreground max-w-2xl mx-auto">
               Born from firsthand experience in solving complex operations problems for companies across continents. 
@@ -211,7 +211,7 @@ export default function About() {
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
           <div className="mx-auto max-w-4xl text-center">
             <h2 className="text-3xl font-bold tracking-tight text-foreground sm:text-4xl mb-8">
-              The ZapIt Founding Story
+              The Zapit Labs Founding Story
             </h2>
             <div className="text-lg leading-8 text-muted-foreground space-y-6">
               <p>

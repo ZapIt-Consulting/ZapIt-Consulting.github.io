@@ -97,7 +97,7 @@ const stats = [
 
 const testimonials = [
   {
-    quote: "We saved over 300 hours per year within 60 days of ZapIt's implementation.",
+    quote: "We saved over 300 hours per year within 60 days of Zapit Labs' implementation.",
     author: "Sarah Johnson",
     company: "Growing Marketing Agency",
     role: "Operations Director",
@@ -155,7 +155,7 @@ export default function Home() {
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="mx-auto max-w-2xl text-center">
             <h2 className="text-2xl sm:text-3xl font-bold tracking-tight text-foreground lg:text-4xl">
-              Why ZapIt?
+              Why Zapit Labs?
             </h2>
           </div>
           <div className="mx-auto mt-12 sm:mt-16 lg:mt-20 max-w-2xl lg:max-w-none">
@@ -231,7 +231,7 @@ export default function Home() {
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="mx-auto max-w-2xl text-center">
             <h2 className="text-2xl sm:text-3xl font-bold tracking-tight text-foreground lg:text-4xl">
-              The ZapIt Difference
+              The Zapit Labs Difference
             </h2>
           </div>
           <div className="mx-auto mt-12 sm:mt-16 max-w-4xl">

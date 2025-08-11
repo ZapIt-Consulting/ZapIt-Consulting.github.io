@@ -67,7 +67,7 @@ export default function Contact() {
             </h1>
             <p className="mt-6 text-lg leading-8 text-muted-foreground max-w-2xl mx-auto">
               Ready to discover automation opportunities? Get in touch with our experts for a comprehensive 
-              workflow audit and personalized recommendations. Contact us via zapitlabs@gmail.com or zapitlabs.com.
+              workflow audit and personalized recommendations. Contact us via team@zapitlabs.com or zapitlabs.com.
             </p>
           </div>
         </div>

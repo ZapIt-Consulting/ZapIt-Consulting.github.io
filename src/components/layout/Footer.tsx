@@ -30,9 +30,17 @@ export default function Footer() {
       <div className="mx-auto max-w-7xl px-6 py-12 lg:px-8">
         <div className="xl:grid xl:grid-cols-3 xl:gap-8">
           <div className="space-y-4">
-            <Link to="/" className="flex items-center space-x-2">
-              <Brain className="h-8 w-8 text-accent" />
-              <span className="text-xl font-bold text-foreground">ZapIt</span>
+            <Link to="/" className="flex items-center">
+              <div className="relative">
+                <img 
+                  src="/lovable-uploads/dffb258d-d592-45fa-a33c-d92917355684.png" 
+                  alt="Zapit Labs Logo" 
+                  className="h-8 w-auto"
+                  style={{
+                    filter: 'brightness(0) saturate(100%) invert(77%) sepia(93%) saturate(1685%) hue-rotate(8deg) brightness(101%) contrast(95%)'
+                  }}
+                />
+              </div>
             </Link>
             <p className="text-sm leading-6 text-muted-foreground max-w-md">
               Transforming business operations through intelligent AI solutions. 
@@ -73,7 +81,7 @@ export default function Footer() {
             <div className="mt-4 space-y-3">
               <div className="flex items-center space-x-3">
                 <Mail className="h-4 w-4 text-accent" />
-                <span className="text-sm text-muted-foreground">hello@zapit.ai</span>
+                <span className="text-sm text-muted-foreground">team@zapitlabs.com</span>
               </div>
               <div className="flex items-center space-x-3">
                 <MapPin className="h-4 w-4 text-accent" />
@@ -85,7 +93,7 @@ export default function Footer() {
 
         <div className="mt-8 border-t border-border pt-8">
           <p className="text-xs leading-5 text-muted-foreground text-center">
-            &copy; 2024 ZapIt. All rights reserved.
+            &copy; 2024 Zapit Labs. All rights reserved.
           </p>
         </div>
       </div>
