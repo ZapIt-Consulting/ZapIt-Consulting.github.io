@@ -8,46 +8,48 @@ All colors MUST be HSL.
 
 @layer base {
   :root {
-    /* New Color Palette */
-    --background: 203 34% 24%; /* #284451 */
-    --foreground: 0 0% 100%; /* #FFFFFF */
+    /* Custom Color Palette */
+    --background: 0 0% 100%; /* #FFFFFF - White */
+    --foreground: 215 25% 27%; /* #171E29 - Very dark blue */
 
-    --card: 215 24% 27%; /* #344255 */
-    --card-foreground: 0 0% 100%;
+    --card: 0 0% 100%; /* #FFFFFF - White */
+    --card-foreground: 215 25% 27%; /* #171E29 - Very dark blue */
 
-    --popover: 215 24% 27%;
-    --popover-foreground: 0 0% 100%;
+    --popover: 0 0% 100%; /* #FFFFFF - White */
+    --popover-foreground: 215 25% 27%; /* #171E29 - Very dark blue */
 
     /* Primary - Dark Blue */
-    --primary: 203 34% 24%; /* #284451 */
-    --primary-foreground: 0 0% 100%;
+    --primary: 206 29% 22%; /* #284451 - Dark blue */
+    --primary-foreground: 0 0% 100%; /* White text on dark blue */
 
-    /* Secondary - Lighter Dark Blue */
-    --secondary: 215 24% 27%; /* #344255 */
-    --secondary-foreground: 0 0% 100%;
+    /* Secondary - Slightly lighter blue */
+    --secondary: 210 25% 25%; /* #344255 - Slightly lighter blue */
+    --secondary-foreground: 0 0% 100%; /* White text */
 
-    /* Muted - Card background */
-    --muted: 215 24% 27%;
-    --muted-foreground: 0 0% 85%;
+    /* Muted - Light gray background */
+    --muted: 0 0% 96%;
+    --muted-foreground: 215 25% 27%;
 
-    /* Accent - Gold for highlights */
-    --accent: 47 99% 65%; /* #FED750 */
-    --accent-foreground: 216 28% 13%; /* #171E29 */
+    /* Accent - Gold/Yellow for highlights */
+    --accent: 49 98% 64%; /* #FED750 - Gold/Yellow */
+    --accent-foreground: 215 25% 27%; /* Dark blue text on yellow */
 
     /* Gold highlight color */
-    --gold: 47 99% 65%; /* #FED750 */
-    --gold-foreground: 216 28% 13%;
+    --highlight: 49 98% 64%; /* #FED750 - Gold/Yellow */
+    --highlight-foreground: 215 25% 27%; /* Dark blue text */
 
-    /* Text colors */
-    --text-dark: 216 28% 13%; /* #171E29 */
-    --text-light: 0 0% 100%; /* #FFFFFF */
+    /* Legacy orange and yellow (now using highlight) */
+    --orange: 49 98% 64%; /* #FED750 */
+    --orange-foreground: 215 25% 27%;
+    --yellow: 49 98% 64%; /* #FED750 */
+    --yellow-foreground: 215 25% 27%;
 
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 210 40% 98%;
 
-    --border: 215 20% 35%;
-    --input: 215 24% 27%;
-    --ring: 47 99% 65%;
+    --border: 75 15% 80%;
+    --input: 75 15% 88%;
+    --ring: 180 85% 45%;
 
     --radius: 0.5rem;
 
@@ -69,41 +71,43 @@ All colors MUST be HSL.
   }
 
   .dark {
-    --background: 203 34% 24%; /* #284451 */
-    --foreground: 0 0% 100%; /* #FFFFFF */
+    --background: 206 29% 22%; /* #284451 - Dark blue background */
+    --foreground: 0 0% 100%; /* White text */
 
-    --card: 215 24% 27%; /* #344255 */
-    --card-foreground: 0 0% 100%;
+    --card: 210 25% 25%; /* #344255 - Slightly lighter blue */
+    --card-foreground: 0 0% 100%; /* White text */
 
-    --popover: 215 24% 27%;
-    --popover-foreground: 0 0% 100%;
+    --popover: 210 25% 25%; /* #344255 */
+    --popover-foreground: 0 0% 100%; /* White text */
 
-    --primary: 203 34% 24%; /* #284451 */
-    --primary-foreground: 0 0% 100%;
+    --primary: 206 29% 22%; /* #284451 - Dark blue */
+    --primary-foreground: 0 0% 100%; /* White text */
 
-    --secondary: 215 24% 27%; /* #344255 */
-    --secondary-foreground: 0 0% 100%;
+    --secondary: 210 25% 25%; /* #344255 - Slightly lighter blue */
+    --secondary-foreground: 0 0% 100%; /* White text */
 
-    --muted: 215 24% 27%;
+    --muted: 210 25% 25%;
     --muted-foreground: 0 0% 85%;
 
-    --accent: 47 99% 65%; /* #FED750 */
-    --accent-foreground: 216 28% 13%; /* #171E29 */
+    --accent: 49 98% 64%; /* #FED750 - Gold/Yellow */
+    --accent-foreground: 215 25% 27%; /* Dark blue text */
 
     /* Gold highlight color */
-    --gold: 47 99% 65%; /* #FED750 */
-    --gold-foreground: 216 28% 13%;
+    --highlight: 49 98% 64%; /* #FED750 - Gold/Yellow */
+    --highlight-foreground: 215 25% 27%; /* Dark blue text */
 
-    /* Text colors */
-    --text-dark: 216 28% 13%; /* #171E29 */
-    --text-light: 0 0% 100%; /* #FFFFFF */
+    /* Legacy orange and yellow (now using highlight) */
+    --orange: 49 98% 64%; /* #FED750 */
+    --orange-foreground: 215 25% 27%;
+    --yellow: 49 98% 64%; /* #FED750 */
+    --yellow-foreground: 215 25% 27%;
 
     --destructive: 0 62.8% 30.6%;
     --destructive-foreground: 210 40% 98%;
 
-    --border: 215 20% 35%;
-    --input: 215 24% 27%;
-    --ring: 47 99% 65%;
+    --border: 240 8% 18%;
+    --input: 240 8% 18%;
+    --ring: 180 85% 45%;
     --sidebar-background: 240 5.9% 10%;
     --sidebar-foreground: 240 4.8% 95.9%;
     --sidebar-primary: 224.3 76.3% 48%;
@@ -125,13 +129,18 @@ All colors MUST be HSL.
     font-feature-settings: "rlig" 1, "calt" 1;
   }
 
-  /* Solid background classes - no gradients */
+  /* Solid color backgrounds (no gradients) */
   .gradient-bg {
-    background: hsl(var(--background));
+    background: hsl(var(--secondary));
   }
 
   .hero-gradient {
     background: hsl(var(--background));
+  }
+
+  /* Highlight text utility */
+  .text-highlight {
+    color: hsl(var(--highlight));
   }
 
   /* Smooth animations */
