@@ -35,7 +35,7 @@ export default function Footer() {
                 <img 
                   src="/lovable-uploads/dffb258d-d592-45fa-a33c-d92917355684.png" 
                   alt="Zapit Labs Logo" 
-                  className="h-8 w-auto"
+                  className="h-16 w-auto"
                   style={{
                     filter: 'brightness(0) saturate(100%) invert(77%) sepia(93%) saturate(1685%) hue-rotate(8deg) brightness(101%) contrast(95%)'
                   }}
