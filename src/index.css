@@ -30,9 +30,9 @@ All colors MUST be HSL.
     --muted: 180 90% 18%;
     --muted-foreground: 0 0% 80%;
 
-    /* Accent - Bright teal for CTAs */
-    --accent: 180 85% 45%;
-    --accent-foreground: 0 0% 100%;
+    /* Accent - Changed to #FED750 for icons and selected states */
+    --accent: 49 98% 64%; /* #FED750 in HSL */
+    --accent-foreground: 0 0% 10%;
 
     /* Orange and Yellow accent colors */
     --orange: 25 95% 60%;
@@ -48,7 +48,7 @@ All colors MUST be HSL.
 
     --border: 75 15% 80%;
     --input: 75 15% 88%;
-    --ring: 180 85% 45%;
+    --ring: 49 98% 64%; /* #FED750 for focus rings */
 
     --radius: 0.5rem;
 
@@ -88,8 +88,9 @@ All colors MUST be HSL.
     --muted: 180 90% 18%;
     --muted-foreground: 0 0% 80%;
 
-    --accent: 180 85% 45%;
-    --accent-foreground: 0 0% 100%;
+    /* Accent - Changed to #FED750 for icons and selected states */
+    --accent: 49 98% 64%; /* #FED750 in HSL */
+    --accent-foreground: 0 0% 10%;
 
     /* Orange and Yellow accent colors */
     --orange: 25 95% 60%;
@@ -105,7 +106,7 @@ All colors MUST be HSL.
 
     --border: 240 8% 18%;
     --input: 240 8% 18%;
-    --ring: 180 85% 45%;
+    --ring: 49 98% 64%; /* #FED750 for focus rings */
     --sidebar-background: 240 5.9% 10%;
     --sidebar-foreground: 240 4.8% 95.9%;
     --sidebar-primary: 224.3 76.3% 48%;
