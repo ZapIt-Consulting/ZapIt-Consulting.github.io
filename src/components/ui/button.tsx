@@ -9,17 +9,17 @@ const buttonVariants = cva(
   {
     variants: {
       variant: {
-        default: "bg-primary text-primary-foreground hover:bg-primary/90",
+        default: "bg-primary text-primary-foreground hover:bg-[hsl(var(--button-hover))] hover:text-black",
         destructive:
-          "bg-destructive text-destructive-foreground hover:bg-destructive/90",
+          "bg-destructive text-destructive-foreground hover:bg-[hsl(var(--button-hover))] hover:text-black",
         outline:
-          "border border-input bg-background hover:bg-accent hover:text-accent-foreground",
+          "border border-input bg-background hover:bg-[hsl(var(--button-hover))] hover:text-black",
         secondary:
-          "bg-secondary text-secondary-foreground hover:bg-secondary/80",
-        ghost: "hover:bg-accent hover:text-accent-foreground",
-        link: "text-primary underline-offset-4 hover:underline",
-        orange: "bg-orange text-orange-foreground hover:bg-orange/90",
-        yellow: "bg-yellow text-yellow-foreground hover:bg-yellow/90",
+          "bg-secondary text-secondary-foreground hover:bg-[hsl(var(--button-hover))] hover:text-black",
+        ghost: "hover:bg-[hsl(var(--button-hover))] hover:text-black",
+        link: "text-primary underline-offset-4 hover:underline hover:text-[hsl(var(--button-hover))]",
+        orange: "bg-orange text-orange-foreground hover:bg-[hsl(var(--button-hover))] hover:text-black",
+        yellow: "bg-yellow text-yellow-foreground hover:bg-[hsl(var(--button-hover))] hover:text-black",
       },
       size: {
         default: "h-10 px-4 py-2",
