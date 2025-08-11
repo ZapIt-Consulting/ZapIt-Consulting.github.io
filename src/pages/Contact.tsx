@@ -7,9 +7,9 @@ const contactMethods = [
     icon: Mail,
     title: "Email",
     description: "Send us a detailed message",
-    contact: "zapitlabs@gmail.com",
+    contact: "team@zapitlabs.com",
     action: "Send email",
-    href: "mailto:zapitlabs@gmail.com?subject=Workflow Audit Inquiry&body=Hello ZapitLabs team,%0D%0A%0D%0AI'm interested in learning more about your AI automation services and would like to schedule a workflow audit.%0D%0A%0D%0APlease contact me at your earliest convenience.%0D%0A%0D%0AThank you!"
+    href: "mailto:team@zapitlabs.com?subject=Workflow Audit Inquiry&body=Hello ZapitLabs team,%0D%0A%0D%0AI'm interested in learning more about your AI automation services and would like to schedule a workflow audit.%0D%0A%0D%0APlease contact me at your earliest convenience.%0D%0A%0D%0AThank you!"
   }
 ];
 
