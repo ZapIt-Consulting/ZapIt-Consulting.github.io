@@ -18,21 +18,33 @@ export default function ContactForm() {
 
     const formData = new FormData(e.currentTarget);
     const data = {
-      firstName: formData.get('firstName'),
-      lastName: formData.get('lastName'),
+      name: formData.get('name'),
       email: formData.get('email'),
       company: formData.get('company'),
       industry: formData.get('industry'),
       message: formData.get('message'),
-      timestamp: new Date().toISOString()
     };
 
     try {
+      // Save to contacts table
+      const { error: dbError } = await supabase
+        .from('contacts')
+        .insert({
+          name: data.name as string,
+          email: data.email as string,
+          company: data.company as string,
+          industry: data.industry as string,
+          message: data.message as string,
+        });
+
+      if (dbError) {
+        throw dbError;
+      }
+
       // Send email via Supabase Edge Function
       const { data: result, error } = await supabase.functions.invoke('send-contact-email', {
         body: {
-          firstName: data.firstName,
-          lastName: data.lastName,
+          name: data.name,
           email: data.email,
           company: data.company,
           industry: data.industry,
@@ -41,7 +53,8 @@ export default function ContactForm() {
       });
 
       if (error) {
-        throw error;
+        console.error('Email error:', error);
+        // Don't throw here - we already saved to DB successfully
       }
 
       toast({
@@ -63,27 +76,16 @@ export default function ContactForm() {
 
   return (
     <form onSubmit={handleSubmit} className="space-y-6">
-      <div className="grid grid-cols-1 gap-6 sm:grid-cols-2">
-        <div>
-          <Label htmlFor="firstName">First name</Label>
-          <Input
-            id="firstName"
-            name="firstName"
-            type="text"
-            required
-            className="mt-1"
-          />
-        </div>
-        <div>
-          <Label htmlFor="lastName">Last name</Label>
-          <Input
-            id="lastName"
-            name="lastName"
-            type="text"
-            required
-            className="mt-1"
-          />
-        </div>
+      <div>
+        <Label htmlFor="name">Name</Label>
+        <Input
+          id="name"
+          name="name"
+          type="text"
+          required
+          className="mt-1"
+          placeholder="Your full name"
+        />
       </div>
 
       <div>
