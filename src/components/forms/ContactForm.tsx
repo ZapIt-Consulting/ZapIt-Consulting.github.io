@@ -6,6 +6,7 @@ import { Label } from "@/components/ui/label";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { useToast } from "@/hooks/use-toast";
 import { Send } from "lucide-react";
+import { supabase } from "@/integrations/supabase/client";
 
 export default function ContactForm() {
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -28,30 +29,26 @@ export default function ContactForm() {
 
     try {
       // Send email via Supabase Edge Function
-      const response = await fetch('/functions/v1/send-contact-email', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({
+      const { data: result, error } = await supabase.functions.invoke('send-contact-email', {
+        body: {
           firstName: data.firstName,
           lastName: data.lastName,
           email: data.email,
           company: data.company,
           industry: data.industry,
           message: data.message
-        })
+        }
       });
 
-      if (response.ok) {
-        toast({
-          title: "Message sent successfully!",
-          description: "We'll get back to you within 24 hours.",
-        });
-        (e.target as HTMLFormElement).reset();
-      } else {
-        throw new Error('Failed to send email');
+      if (error) {
+        throw error;
       }
+
+      toast({
+        title: "Message sent successfully!",
+        description: "We'll get back to you within 24 hours.",
+      });
+      (e.target as HTMLFormElement).reset();
     } catch (error) {
       console.error('Error sending email:', error);
       toast({
