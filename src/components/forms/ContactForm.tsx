@@ -26,6 +26,22 @@ export default function ContactForm() {
     };
 
     try {
+      // Save to contacts table
+      const { error: dbError } = await supabase
+        .from('contacts')
+        .insert({
+          name: data.name as string,
+          email: data.email as string,
+          company: data.company as string,
+          industry: data.industry as string,
+          message: data.message as string,
+        });
+
+      if (dbError) {
+        console.error('Database error:', dbError);
+        // Continue with email sending even if DB fails
+      }
+
       // Send email via Supabase Edge Function
       const { data: result, error } = await supabase.functions.invoke('send-contact-email', {
         body: {
