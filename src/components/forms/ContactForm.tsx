@@ -39,23 +39,7 @@ export default function ContactForm() {
 
       if (dbError) {
         console.error('Database error:', dbError);
-        // Continue with email sending even if DB fails
-      }
-
-      // Send email via Supabase Edge Function
-      const { data: result, error } = await supabase.functions.invoke('send-contact-email', {
-        body: {
-          name: data.name,
-          email: data.email,
-          company: data.company,
-          industry: data.industry,
-          message: data.message
-        }
-      });
-
-      if (error) {
-        console.error('Email error:', error);
-        // Don't throw here - we already saved to DB successfully
+        throw dbError;
       }
 
       toast({
