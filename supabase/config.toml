@@ -1,1 +1,4 @@
 project_id = "wxvahctwjucwifchpbth"
+
+[functions.notify-new-contact]
+verify_jwt = false
