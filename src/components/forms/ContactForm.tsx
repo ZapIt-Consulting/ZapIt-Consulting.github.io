@@ -19,12 +19,23 @@ export default function ContactForm() {
 
     const formData = new FormData(e.currentTarget);
     const data = {
-      name: formData.get('name'),
-      email: formData.get('email'),
-      company: formData.get('company'),
+      name: formData.get('name') as string,
+      email: formData.get('email') as string,
+      company: formData.get('company') as string,
       industry: industry,
-      message: formData.get('message'),
+      message: formData.get('message') as string,
     };
+
+    // Validate required fields
+    if (!data.name || !data.email || !data.company || !industry || !data.message) {
+      toast({
+        title: "Please fill in all fields",
+        description: "All fields are required to submit the form.",
+        variant: "destructive",
+      });
+      setIsSubmitting(false);
+      return;
+    }
 
     try {
       // Save to contacts table
