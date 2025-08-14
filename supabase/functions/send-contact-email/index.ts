@@ -1,33 +1,40 @@
-import "https://deno.land/x/xhr@0.1.0/mod.ts";
-import { serve } from "https://deno.land/std@0.168.0/http/server.ts";
+import { serve } from "https://deno.land/std@0.168.0/http/server.ts"
+import { createClient } from 'https://esm.sh/@supabase/supabase-js@2'
 
 const corsHeaders = {
   'Access-Control-Allow-Origin': '*',
   'Access-Control-Allow-Headers': 'authorization, x-client-info, apikey, content-type',
-};
+}
 
 serve(async (req) => {
   // Handle CORS preflight requests
   if (req.method === 'OPTIONS') {
-    return new Response(null, { headers: corsHeaders });
+    return new Response('ok', { headers: corsHeaders })
   }
 
   try {
-    const { firstName, lastName, email, company, industry, message } = await req.json();
+    const { firstName, lastName, email, company, industry, message } = await req.json()
 
-    console.log('Processing contact form submission for:', email);
+    // Create email content
+    const emailBody = `
+New Contact Form Submission
 
-    // Send email using Resend API
-    const resendApiKey = Deno.env.get('RESEND_API_KEY');
+Name: ${firstName} ${lastName}
+Email: ${email}
+Company: ${company}
+Industry: ${industry}
+
+Message:
+${message}
+
+Submitted at: ${new Date().toISOString()}
+    `.trim()
+
+    // Use Resend API to send email
+    const resendApiKey = Deno.env.get('RESEND_API_KEY')
+    
     if (!resendApiKey) {
-      console.error('RESEND_API_KEY not found');
-      return new Response(
-        JSON.stringify({ error: 'Email configuration missing' }),
-        { 
-          status: 500, 
-          headers: { ...corsHeaders, 'Content-Type': 'application/json' } 
-        }
-      );
+      throw new Error('RESEND_API_KEY not configured')
     }
 
     const emailResponse = await fetch('https://api.resend.com/emails', {
@@ -37,36 +44,35 @@ serve(async (req) => {
         'Content-Type': 'application/json',
       },
       body: JSON.stringify({
-        from: 'noreply@zapitlabs.com',
-        to: [email],
-        subject: 'Thank you for contacting ZapitLabs',
-        text: `Dear ${firstName},\n\nThank you for reaching out to ZapitLabs. We have received your message and will get back to you within 24 hours.\n\nBest regards,\nZapitLabs Team`,
+        from: 'ZapitLabs Contact <noreply@zapitlabs.com>',
+        to: ['team@zapitlabs.com'],
+        subject: `New Contact Form Submission from ${firstName} ${lastName}`,
+        text: emailBody,
+        html: emailBody.replace(/\n/g, '<br>'),
       }),
-    });
+    })
 
     if (!emailResponse.ok) {
-      const errorText = await emailResponse.text();
-      console.error('Failed to send email:', errorText);
-      throw new Error('Failed to send email');
+      const errorText = await emailResponse.text()
+      throw new Error(`Resend API error: ${errorText}`)
     }
-
-    console.log('Email sent successfully to:', email);
 
     return new Response(
       JSON.stringify({ success: true, message: 'Email sent successfully' }),
       { 
-        headers: { ...corsHeaders, 'Content-Type': 'application/json' } 
+        headers: { ...corsHeaders, 'Content-Type': 'application/json' },
+        status: 200 
       }
-    );
+    )
 
   } catch (error) {
-    console.error('Error in send-contact-email function:', error);
+    console.error('Error sending email:', error)
     return new Response(
-      JSON.stringify({ error: error.message }),
+      JSON.stringify({ success: false, error: error.message }),
       { 
-        status: 500, 
-        headers: { ...corsHeaders, 'Content-Type': 'application/json' } 
+        headers: { ...corsHeaders, 'Content-Type': 'application/json' },
+        status: 500 
       }
-    );
+    )
   }
-});
+})
