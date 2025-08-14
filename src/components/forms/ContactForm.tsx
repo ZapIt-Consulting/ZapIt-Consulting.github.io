@@ -10,6 +10,7 @@ import { supabase } from "@/integrations/supabase/client";
 
 export default function ContactForm() {
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const [industry, setIndustry] = useState<string>("");
   const { toast } = useToast();
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
@@ -21,7 +22,7 @@ export default function ContactForm() {
       name: formData.get('name'),
       email: formData.get('email'),
       company: formData.get('company'),
-      industry: formData.get('industry'),
+      industry: industry,
       message: formData.get('message'),
     };
 
@@ -47,13 +48,16 @@ export default function ContactForm() {
         description: "We'll get back to you within 24 hours.",
       });
       (e.target as HTMLFormElement).reset();
+      setIndustry("");
     } catch (error) {
       console.error('Error sending email:', error);
       toast({
-        title: "Message sent!",
-        description: "We've received your message and will get back to you within 24 hours.",
+        title: "Error occurred!",
+        description: "Please try again or contact us directly.",
+        variant: "destructive",
       });
       (e.target as HTMLFormElement).reset();
+      setIndustry("");
     }
     
     setIsSubmitting(false);
@@ -97,7 +101,7 @@ export default function ContactForm() {
 
       <div>
         <Label htmlFor="industry">Industry</Label>
-        <Select name="industry" required>
+        <Select value={industry} onValueChange={setIndustry} required>
           <SelectTrigger className="mt-1">
             <SelectValue placeholder="Select your industry" />
           </SelectTrigger>
