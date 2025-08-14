@@ -17,6 +17,8 @@ export default function ContactForm() {
     e.preventDefault();
     setIsSubmitting(true);
 
+    console.log('Form submission started');
+
     const formData = new FormData(e.currentTarget);
     const data = {
       name: formData.get('name') as string,
@@ -26,8 +28,11 @@ export default function ContactForm() {
       message: formData.get('message') as string,
     };
 
+    console.log('Form data collected:', data);
+
     // Validate required fields
     if (!data.name || !data.email || !data.company || !industry || !data.message) {
+      console.log('Validation failed, missing fields');
       toast({
         title: "Please fill in all fields",
         description: "All fields are required to submit the form.",
@@ -38,21 +43,25 @@ export default function ContactForm() {
     }
 
     try {
+      console.log('Attempting database insert...');
+      
       // Save to contacts table
       const { error: dbError } = await supabase
         .from('contacts')
         .insert({
-          name: data.name as string,
-          email: data.email as string,
-          company: data.company as string,
-          industry: data.industry as string,
-          message: data.message as string,
+          name: data.name,
+          email: data.email,
+          company: data.company,
+          industry: data.industry,
+          message: data.message,
         });
 
       if (dbError) {
         console.error('Database error:', dbError);
         throw dbError;
       }
+
+      console.log('Database insert successful');
 
       toast({
         title: "Message sent successfully!",
@@ -61,14 +70,12 @@ export default function ContactForm() {
       (e.target as HTMLFormElement).reset();
       setIndustry("");
     } catch (error) {
-      console.error('Error sending email:', error);
+      console.error('Error in form submission:', error);
       toast({
         title: "Error occurred!",
         description: "Please try again or contact us directly.",
         variant: "destructive",
       });
-      (e.target as HTMLFormElement).reset();
-      setIndustry("");
     }
     
     setIsSubmitting(false);
