@@ -26,7 +26,7 @@ export default function ContactForm() {
     };
 
     try {
-      // Save to contacts table
+      // Step 1: Save to contacts table
       const { error: dbError } = await supabase
         .from('contacts')
         .insert({
@@ -42,18 +42,52 @@ export default function ContactForm() {
         throw dbError;
       }
 
+      // Step 2: Call send-contact-email function
+      const [firstName, ...lastNameParts] = (data.name as string).split(' ');
+      const lastName = lastNameParts.join(' ') || '';
+      
+      const { error: emailError } = await supabase.functions.invoke('send-contact-email', {
+        body: {
+          firstName,
+          lastName,
+          email: data.email,
+          company: data.company,
+          industry: data.industry,
+          message: data.message,
+        },
+      });
+
+      if (emailError) {
+        console.error('Email function error:', emailError);
+      }
+
+      // Step 3: Call notify-new-contact function
+      const { error: notifyError } = await supabase.functions.invoke('notify-new-contact', {
+        body: {
+          name: data.name,
+          email: data.email,
+          company: data.company,
+          industry: data.industry,
+          message: data.message,
+        },
+      });
+
+      if (notifyError) {
+        console.error('Notify function error:', notifyError);
+      }
+
       toast({
         title: "Message sent successfully!",
         description: "We'll get back to you within 24 hours.",
       });
       (e.target as HTMLFormElement).reset();
     } catch (error) {
-      console.error('Error sending email:', error);
+      console.error('Error in form submission:', error);
       toast({
-        title: "Message sent!",
-        description: "We've received your message and will get back to you within 24 hours.",
+        title: "Error sending message",
+        description: "Please try again or contact us directly.",
+        variant: "destructive",
       });
-      (e.target as HTMLFormElement).reset();
     }
     
     setIsSubmitting(false);
