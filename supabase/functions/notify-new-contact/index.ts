@@ -13,11 +13,11 @@ serve(async (req) => {
   }
 
   try {
-    const { firstName, lastName, email, company, industry, message } = await req.json();
+    const { name, email, company, industry, message } = await req.json();
 
-    console.log('Processing contact form submission for:', email);
+    console.log('Processing new contact notification for:', email);
 
-    // Send email using Resend API
+    // Send notification email to team
     const resendApiKey = Deno.env.get('RESEND_API_KEY');
     if (!resendApiKey) {
       console.error('RESEND_API_KEY not found');
@@ -30,6 +30,18 @@ serve(async (req) => {
       );
     }
 
+    const emailBody = `
+New Contact Form Submission
+
+Name: ${name}
+Email: ${email}
+Company: ${company}
+Industry: ${industry}
+Message: ${message}
+
+Submitted at: ${new Date().toISOString()}
+    `;
+
     const emailResponse = await fetch('https://api.resend.com/emails', {
       method: 'POST',
       headers: {
@@ -37,30 +49,30 @@ serve(async (req) => {
         'Content-Type': 'application/json',
       },
       body: JSON.stringify({
-        from: 'noreply@zapitlabs.com',
-        to: [email],
-        subject: 'Thank you for contacting ZapitLabs',
-        text: `Dear ${firstName},\n\nThank you for reaching out to ZapitLabs. We have received your message and will get back to you within 24 hours.\n\nBest regards,\nZapitLabs Team`,
+        from: 'notifications@zapitlabs.com',
+        to: ['team@zapitlabs.com'],
+        subject: 'New Contact Form Submission',
+        text: emailBody,
       }),
     });
 
     if (!emailResponse.ok) {
       const errorText = await emailResponse.text();
-      console.error('Failed to send email:', errorText);
-      throw new Error('Failed to send email');
+      console.error('Failed to send notification email:', errorText);
+      throw new Error('Failed to send notification email');
     }
 
-    console.log('Email sent successfully to:', email);
+    console.log('Notification email sent successfully to team@zapitlabs.com');
 
     return new Response(
-      JSON.stringify({ success: true, message: 'Email sent successfully' }),
+      JSON.stringify({ success: true, message: 'Notification sent successfully' }),
       { 
         headers: { ...corsHeaders, 'Content-Type': 'application/json' } 
       }
     );
 
   } catch (error) {
-    console.error('Error in send-contact-email function:', error);
+    console.error('Error in notify-new-contact function:', error);
     return new Response(
       JSON.stringify({ error: error.message }),
       { 
