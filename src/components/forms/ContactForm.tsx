@@ -58,15 +58,24 @@ export default function ContactForm() {
         .select()
         .single();
 
+      console.log('Database insert response:', { contactData, dbError });
+
       if (dbError) {
-        console.error('Database error:', dbError);
+        console.error('Database error details:', {
+          message: dbError.message,
+          details: dbError.details,
+          hint: dbError.hint,
+          code: dbError.code
+        });
         throw new Error(`Database error: ${dbError.message}`);
       }
 
-      console.log('Database insert successful, sending email notification...');
+      console.log('Database insert successful, contact ID:', contactData.id);
+      console.log('Now sending email notification...');
 
       // Send email notification
       try {
+        console.log('Invoking edge function send-contact-notification...');
         const emailResponse = await supabase.functions.invoke('send-contact-notification', {
           body: {
             name: data.name,
@@ -78,9 +87,13 @@ export default function ContactForm() {
           },
         });
 
+        console.log('Edge function response:', emailResponse);
+
         if (emailResponse.error) {
           console.warn('Email notification failed:', emailResponse.error);
           // Don't throw here - form submission was successful even if email failed
+        } else {
+          console.log('Email notification sent successfully');
         }
       } catch (emailError) {
         console.warn('Email notification error:', emailError);
