@@ -46,7 +46,7 @@ export default function ContactForm() {
       console.log('Attempting database insert...');
       
       // Save to contacts table
-      const { error: dbError } = await supabase
+      const { data: contactData, error: dbError } = await supabase
         .from('contacts')
         .insert({
           name: data.name,
@@ -54,14 +54,38 @@ export default function ContactForm() {
           company: data.company,
           industry: data.industry,
           message: data.message,
-        });
+        })
+        .select()
+        .single();
 
       if (dbError) {
         console.error('Database error:', dbError);
-        throw dbError;
+        throw new Error(`Database error: ${dbError.message}`);
       }
 
-      console.log('Database insert successful');
+      console.log('Database insert successful, sending email notification...');
+
+      // Send email notification
+      try {
+        const emailResponse = await supabase.functions.invoke('send-contact-notification', {
+          body: {
+            name: data.name,
+            email: data.email,
+            company: data.company,
+            industry: data.industry,
+            message: data.message,
+            created_at: contactData.created_at,
+          },
+        });
+
+        if (emailResponse.error) {
+          console.warn('Email notification failed:', emailResponse.error);
+          // Don't throw here - form submission was successful even if email failed
+        }
+      } catch (emailError) {
+        console.warn('Email notification error:', emailError);
+        // Don't throw here - form submission was successful even if email failed
+      }
 
       toast({
         title: "Message sent successfully!",
@@ -71,9 +95,12 @@ export default function ContactForm() {
       setIndustry("");
     } catch (error) {
       console.error('Error in form submission:', error);
+      const errorMessage = error instanceof Error ? error.message : 'An unexpected error occurred';
       toast({
-        title: "Error occurred!",
-        description: "Please try again or contact us directly.",
+        title: "Failed to submit form",
+        description: errorMessage.includes('Database error') 
+          ? "There was a problem saving your message. Please try again."
+          : "Please check your internet connection and try again.",
         variant: "destructive",
       });
     }
