@@ -1,63 +1,46 @@
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import ContactForm from "@/components/forms/ContactForm";
 import { Mail, Phone, MapPin, Clock, MessageSquare, Calendar } from "lucide-react";
-
-const contactMethods = [
-  {
-    icon: Mail,
-    title: "Email",
-    description: "Send us a detailed message",
-    contact: "team@zapitlabs.com",
-    action: "Send email",
-    href: "mailto:team@zapitlabs.com?subject=Workflow Audit Inquiry&body=Hello ZapitLabs team,%0D%0A%0D%0AI'm interested in learning more about your AI automation services and would like to schedule a workflow audit.%0D%0A%0D%0APlease contact me at your earliest convenience.%0D%0A%0D%0AThank you!"
-  }
-];
-
-const offices = [
-  {
-    city: "India",
-    address: "Mumbai, Bangalore, Hyderabad",
-    region: "Multiple locations"
-  },
-  {
-    city: "Dubai / UAE",
-    address: "Business District",
-    region: "UAE"
-  },
-  {
-    city: "USA",
-    address: "New York, California",
-    region: "Multiple locations"
-  },
-  {
-    city: "Canada",
-    address: "Toronto",
-    region: "ON"
-  }
-];
-
-const faqs = [
-  {
-    question: "How long does a typical AI implementation take?",
-    answer: "Implementation timelines vary based on project complexity, but most initiatives take 3-6 months from initial assessment to full deployment."
-  },
-  {
-    question: "What's the minimum budget for an AI project?",
-    answer: "Project costs depend on scope and complexity. We work with businesses of all sizes, with projects starting from $50,000 to multi-million dollar enterprise transformations."
-  },
-  {
-    question: "Do you provide ongoing support after implementation?",
-    answer: "Yes, we offer comprehensive support packages including monitoring, optimization, training, and technical assistance to ensure long-term success."
-  },
-  {
-    question: "Can you work with our existing technology stack?",
-    answer: "Absolutely. Our solutions are designed to integrate seamlessly with existing systems, whether cloud-based, on-premise, or hybrid environments."
-  }
-];
-
+const contactMethods = [{
+  icon: Mail,
+  title: "Email",
+  description: "Send us a detailed message",
+  contact: "team@zapitlabs.com",
+  action: "Send email",
+  href: "mailto:team@zapitlabs.com?subject=Workflow Audit Inquiry&body=Hello ZapitLabs team,%0D%0A%0D%0AI'm interested in learning more about your AI automation services and would like to schedule a workflow audit.%0D%0A%0D%0APlease contact me at your earliest convenience.%0D%0A%0D%0AThank you!"
+}];
+const offices = [{
+  city: "India",
+  address: "Mumbai, Bangalore, Hyderabad",
+  region: "Multiple locations"
+}, {
+  city: "Dubai / UAE",
+  address: "Business District",
+  region: "UAE"
+}, {
+  city: "USA",
+  address: "New York, California",
+  region: "Multiple locations"
+}, {
+  city: "Canada",
+  address: "Toronto",
+  region: "ON"
+}];
+const faqs = [{
+  question: "How long does a typical AI implementation take?",
+  answer: "Implementation timelines vary based on project complexity, but most initiatives take 3-6 months from initial assessment to full deployment."
+}, {
+  question: "What's the minimum budget for an AI project?",
+  answer: "Project costs depend on scope and complexity. We work with businesses of all sizes, with projects starting from $50,000 to multi-million dollar enterprise transformations."
+}, {
+  question: "Do you provide ongoing support after implementation?",
+  answer: "Yes, we offer comprehensive support packages including monitoring, optimization, training, and technical assistance to ensure long-term success."
+}, {
+  question: "Can you work with our existing technology stack?",
+  answer: "Absolutely. Our solutions are designed to integrate seamlessly with existing systems, whether cloud-based, on-premise, or hybrid environments."
+}];
 export default function Contact() {
-  return (
-    <div className="min-h-screen">
+  return <div className="min-h-screen">
       {/* Hero Section */}
       <section className="hero-gradient py-24 lg:py-32">
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
@@ -94,10 +77,7 @@ export default function Contact() {
               </CardHeader>
               <CardContent>
                 <p className="font-semibold text-foreground mb-4">{contactMethods[0].contact}</p>
-                <a 
-                  href={contactMethods[0].href} 
-                  className="inline-flex items-center justify-center rounded-md bg-accent text-accent-foreground hover:bg-accent/90 h-10 px-4 py-2 text-sm font-medium smooth-transition"
-                >
+                <a href={contactMethods[0].href} className="inline-flex items-center justify-center rounded-md bg-accent text-accent-foreground hover:bg-accent/90 h-10 px-4 py-2 text-sm font-medium smooth-transition">
                   {contactMethods[0].action} →
                 </a>
               </CardContent>
@@ -136,15 +116,7 @@ export default function Contact() {
                       <p className="text-muted-foreground">Fill out the form for detailed project discussions</p>
                     </div>
                   </div>
-                  <div className="flex items-start">
-                    <div className="flex-shrink-0">
-                      <div className="w-2 h-2 bg-accent rounded-full mt-2"></div>
-                    </div>
-                    <div className="ml-4">
-                      <h4 className="font-semibold text-foreground">Calendly Integration</h4>
-                      <p className="text-muted-foreground">Schedule a demo directly through our calendar</p>
-                    </div>
-                  </div>
+                  
                   <div className="flex items-start">
                     <div className="flex-shrink-0">
                       <div className="w-2 h-2 bg-accent rounded-full mt-2"></div>
@@ -212,8 +184,7 @@ export default function Contact() {
           </div>
           
           <div className="grid grid-cols-1 gap-8 lg:grid-cols-3">
-            {offices.map((office) => (
-              <Card key={office.city} className="shadow-lg">
+            {offices.map(office => <Card key={office.city} className="shadow-lg">
                 <CardHeader>
                   <CardTitle className="flex items-center">
                     <MapPin className="h-5 w-5 text-accent mr-2" />
@@ -226,8 +197,7 @@ export default function Contact() {
                     <p className="text-muted-foreground">{office.region}</p>
                   </div>
                 </CardContent>
-              </Card>
-            ))}
+              </Card>)}
           </div>
         </div>
       </section>
@@ -245,19 +215,16 @@ export default function Contact() {
           </div>
           
           <div className="grid grid-cols-1 gap-6 lg:grid-cols-2">
-            {faqs.map((faq, index) => (
-              <Card key={index} className="shadow-lg">
+            {faqs.map((faq, index) => <Card key={index} className="shadow-lg">
                 <CardHeader>
                   <CardTitle className="text-lg">{faq.question}</CardTitle>
                 </CardHeader>
                 <CardContent>
                   <p className="text-muted-foreground">{faq.answer}</p>
                 </CardContent>
-              </Card>
-            ))}
+              </Card>)}
           </div>
         </div>
       </section>
-    </div>
-  );
+    </div>;
 }
