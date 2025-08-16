@@ -10,94 +10,51 @@ import { supabase } from "@/integrations/supabase/client";
 
 export default function ContactForm() {
   const [isSubmitting, setIsSubmitting] = useState(false);
-  const [industry, setIndustry] = useState<string>("");
   const { toast } = useToast();
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     setIsSubmitting(true);
 
-    console.log('Form submission started');
-
     const formData = new FormData(e.currentTarget);
     const data = {
-      name: formData.get('name') as string,
-      email: formData.get('email') as string,
-      company: formData.get('company') as string,
-      industry: industry,
-      message: formData.get('message') as string,
+      name: formData.get('name'),
+      email: formData.get('email'),
+      company: formData.get('company'),
+      industry: formData.get('industry'),
+      message: formData.get('message'),
     };
 
-    console.log('Form data collected:', data);
-
-    // Validate required fields
-    if (!data.name || !data.email || !data.company || !industry || !data.message) {
-      console.log('Validation failed, missing fields');
-      toast({
-        title: "Please fill in all fields",
-        description: "All fields are required to submit the form.",
-        variant: "destructive",
-      });
-      setIsSubmitting(false);
-      return;
-    }
-
     try {
-      console.log('Attempting database insert...');
-      
       // Save to contacts table
-      const { data: contactData, error: dbError } = await supabase
+      const { error: dbError } = await supabase
         .from('contacts')
         .insert({
+          name: data.name as string,
+          email: data.email as string,
+          company: data.company as string,
+          industry: data.industry as string,
+          message: data.message as string,
+        });
+
+      if (dbError) {
+        throw dbError;
+      }
+
+      // Send email via Supabase Edge Function
+      const { data: result, error } = await supabase.functions.invoke('send-contact-email', {
+        body: {
           name: data.name,
           email: data.email,
           company: data.company,
           industry: data.industry,
-          message: data.message,
-        })
-        .select()
-        .single();
-
-      console.log('Database insert response:', { contactData, dbError });
-
-      if (dbError) {
-        console.error('Database error details:', {
-          message: dbError.message,
-          details: dbError.details,
-          hint: dbError.hint,
-          code: dbError.code
-        });
-        throw new Error(`Database error: ${dbError.message}`);
-      }
-
-      console.log('Database insert successful, contact ID:', contactData.id);
-      console.log('Now sending email notification...');
-
-      // Send email notification
-      try {
-        console.log('Invoking edge function send-contact-notification...');
-        const emailResponse = await supabase.functions.invoke('send-contact-notification', {
-          body: {
-            name: data.name,
-            email: data.email,
-            company: data.company,
-            industry: data.industry,
-            message: data.message,
-            created_at: contactData.created_at,
-          },
-        });
-
-        console.log('Edge function response:', emailResponse);
-
-        if (emailResponse.error) {
-          console.warn('Email notification failed:', emailResponse.error);
-          // Don't throw here - form submission was successful even if email failed
-        } else {
-          console.log('Email notification sent successfully');
+          message: data.message
         }
-      } catch (emailError) {
-        console.warn('Email notification error:', emailError);
-        // Don't throw here - form submission was successful even if email failed
+      });
+
+      if (error) {
+        console.error('Email error:', error);
+        // Don't throw here - we already saved to DB successfully
       }
 
       toast({
@@ -105,17 +62,13 @@ export default function ContactForm() {
         description: "We'll get back to you within 24 hours.",
       });
       (e.target as HTMLFormElement).reset();
-      setIndustry("");
     } catch (error) {
-      console.error('Error in form submission:', error);
-      const errorMessage = error instanceof Error ? error.message : 'An unexpected error occurred';
+      console.error('Error sending email:', error);
       toast({
-        title: "Failed to submit form",
-        description: errorMessage.includes('Database error') 
-          ? "There was a problem saving your message. Please try again."
-          : "Please check your internet connection and try again.",
-        variant: "destructive",
+        title: "Message sent!",
+        description: "We've received your message and will get back to you within 24 hours.",
       });
+      (e.target as HTMLFormElement).reset();
     }
     
     setIsSubmitting(false);
@@ -159,7 +112,7 @@ export default function ContactForm() {
 
       <div>
         <Label htmlFor="industry">Industry</Label>
-        <Select value={industry} onValueChange={setIndustry} required>
+        <Select name="industry" required>
           <SelectTrigger className="mt-1">
             <SelectValue placeholder="Select your industry" />
           </SelectTrigger>

@@ -141,6 +141,15 @@ export default function Contact() {
                       <div className="w-2 h-2 bg-accent rounded-full mt-2"></div>
                     </div>
                     <div className="ml-4">
+                      <h4 className="font-semibold text-foreground">Calendly Integration</h4>
+                      <p className="text-muted-foreground">Schedule a demo directly through our calendar</p>
+                    </div>
+                  </div>
+                  <div className="flex items-start">
+                    <div className="flex-shrink-0">
+                      <div className="w-2 h-2 bg-accent rounded-full mt-2"></div>
+                    </div>
+                    <div className="ml-4">
                       <h4 className="font-semibold text-foreground">WhatsApp Chat</h4>
                       <p className="text-muted-foreground">Instant messaging for quick questions (India/UAE)</p>
                     </div>
