@@ -2,6 +2,7 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Link } from "react-router-dom";
 import { ArrowRight, Bot, Zap, Target, TrendingUp, Users, Shield } from "lucide-react";
+import LightningPattern from "@/components/ui/LightningPattern";
 const features = [{
   icon: Bot,
   title: "AI + Automation Tailored",
@@ -84,7 +85,8 @@ const testimonials = [{
   role: "Managing Partner"
 }];
 export default function Home() {
-  return <div className="min-h-screen">
+  return <div className="relative min-h-screen">
+      <LightningPattern density="sparse" seed={50} />
       {/* Hero Section */}
       <section className="relative py-16 sm:py-20 lg:py-32 bg-cover bg-center bg-no-repeat" style={{
       backgroundImage: 'url(/lovable-uploads/e66aff1b-b608-47e7-ae06-bf47981a4944.png)'
@@ -116,7 +118,8 @@ export default function Home() {
       </section>
 
       {/* Features Section */}
-      <section className="py-16 sm:py-20 lg:py-24 bg-background">
+      <section className="relative py-16 sm:py-20 lg:py-24 bg-background">
+        <LightningPattern density="dense" seed={101} />
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="mx-auto max-w-2xl text-center">
             <h2 className="text-2xl sm:text-3xl font-bold tracking-tight text-foreground lg:text-4xl">
@@ -140,7 +143,8 @@ export default function Home() {
       </section>
 
       {/* Services Section */}
-      <section className="gradient-bg py-16 sm:py-20 lg:py-24">
+      <section className="relative gradient-bg py-16 sm:py-20 lg:py-24">
+        <LightningPattern density="normal" seed={202} />
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="mx-auto max-w-2xl text-center">
             <h2 className="text-2xl sm:text-3xl font-bold tracking-tight text-foreground lg:text-4xl">
@@ -162,7 +166,8 @@ export default function Home() {
       </section>
 
       {/* Industries Section */}
-      <section className="py-16 sm:py-20 lg:py-24 bg-background">
+      <section className="relative py-16 sm:py-20 lg:py-24 bg-background">
+        <LightningPattern density="sparse" seed={303} />
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="mx-auto max-w-2xl text-center">
             <h2 className="text-2xl sm:text-3xl font-bold tracking-tight text-foreground lg:text-4xl">
@@ -184,7 +189,8 @@ export default function Home() {
       </section>
 
       {/* Differentiators Section */}
-      <section className="gradient-bg py-16 sm:py-20 lg:py-24">
+      <section className="relative gradient-bg py-16 sm:py-20 lg:py-24">
+        <LightningPattern density="dense" seed={404} />
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="mx-auto max-w-2xl text-center">
             <h2 className="text-2xl sm:text-3xl font-bold tracking-tight text-foreground lg:text-4xl">
@@ -203,7 +209,8 @@ export default function Home() {
       </section>
 
       {/* Stats Section */}
-      <section className="py-16 sm:py-20 lg:py-24 bg-background">
+      <section className="relative py-16 sm:py-20 lg:py-24 bg-background">
+        <LightningPattern density="normal" seed={505} />
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <dl className="mx-auto grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-4 text-center max-w-2xl lg:max-w-none">
             {stats.map(stat => <div key={stat.label} className="mx-auto flex max-w-xs flex-col gap-y-3 sm:gap-y-4">
@@ -217,7 +224,8 @@ export default function Home() {
       </section>
 
       {/* Testimonials Section */}
-      <section className="py-16 sm:py-20 lg:py-24 bg-background">
+      <section className="relative py-16 sm:py-20 lg:py-24 bg-background">
+        <LightningPattern density="sparse" seed={606} />
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="mx-auto max-w-2xl text-center">
             <h2 className="text-2xl sm:text-3xl font-bold tracking-tight text-foreground lg:text-4xl">
@@ -243,7 +251,8 @@ export default function Home() {
       </section>
 
       {/* CTA Section */}
-      <section className="hero-gradient py-16 sm:py-20 lg:py-24">
+      <section className="relative hero-gradient py-16 sm:py-20 lg:py-24">
+        <LightningPattern density="dense" seed={707} />
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="mx-auto max-w-2xl text-center">
             <h2 className="text-2xl sm:text-3xl font-bold tracking-tight text-foreground lg:text-4xl">

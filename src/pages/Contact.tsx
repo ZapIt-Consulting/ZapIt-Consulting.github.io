@@ -1,3 +1,4 @@
+import LightningPattern from "@/components/ui/LightningPattern";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import ContactForm from "@/components/forms/ContactForm";
 import { Mail, Phone, MapPin, Clock, MessageSquare, Calendar } from "lucide-react";
@@ -40,7 +41,8 @@ const faqs = [{
   answer: "Absolutely. Our solutions are designed to integrate seamlessly with existing systems, whether cloud-based, on-premise, or hybrid environments."
 }];
 export default function Contact() {
-  return <div className="min-h-screen">
+  return <div className="relative min-h-screen">
+      <LightningPattern density="dense" seed={1250} />
       {/* Hero Section */}
       <section className="hero-gradient py-24 lg:py-32">
         <div className="mx-auto max-w-7xl px-6 lg:px-8">

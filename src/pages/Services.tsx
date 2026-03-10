@@ -1,3 +1,4 @@
+import LightningPattern from "@/components/ui/LightningPattern";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Link } from "react-router-dom";
@@ -118,7 +119,8 @@ const processSteps = [
 
 export default function Services() {
   return (
-    <div className="min-h-screen">
+    <div className="relative min-h-screen">
+      <LightningPattern density="dense" seed={810} />
       {/* Hero Section */}
       <section className="hero-gradient py-24 lg:py-32">
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
