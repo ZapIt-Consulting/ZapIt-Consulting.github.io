@@ -2,6 +2,7 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Link } from "react-router-dom";
 import { ArrowRight, Bot, Zap, Target, TrendingUp, Users, Shield } from "lucide-react";
+import LightningPattern from "@/components/ui/LightningPattern";
 const features = [{
   icon: Bot,
   title: "AI + Automation Tailored",
