@@ -37,7 +37,7 @@ export default function Footer() {
                   alt="Zapit Labs Logo" 
                   className="h-16 w-auto"
                   style={{
-                    filter: 'brightness(0) saturate(100%) invert(77%) sepia(93%) saturate(1685%) hue-rotate(8deg) brightness(101%) contrast(95%)'
+                    filter: 'brightness(0) saturate(100%) invert(64%) sepia(30%) saturate(872%) hue-rotate(67deg) brightness(95%) contrast(88%)'
                   }}
                 />
               </div>
