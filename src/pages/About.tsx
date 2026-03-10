@@ -119,7 +119,8 @@ const milestones = [
 
 export default function About() {
   return (
-    <div className="min-h-screen">
+    <div className="relative min-h-screen">
+      <LightningPattern density="dense" seed={920} />
       {/* Hero Section */}
       <section className="hero-gradient py-24 lg:py-32">
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
