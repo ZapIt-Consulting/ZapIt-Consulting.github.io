@@ -208,7 +208,8 @@ export default function Home() {
       </section>
 
       {/* Stats Section */}
-      <section className="py-16 sm:py-20 lg:py-24 bg-background">
+      <section className="relative py-16 sm:py-20 lg:py-24 bg-background">
+        <LightningPattern density="normal" seed={505} />
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <dl className="mx-auto grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-4 text-center max-w-2xl lg:max-w-none">
             {stats.map(stat => <div key={stat.label} className="mx-auto flex max-w-xs flex-col gap-y-3 sm:gap-y-4">
