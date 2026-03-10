@@ -85,7 +85,8 @@ const testimonials = [{
   role: "Managing Partner"
 }];
 export default function Home() {
-  return <div className="min-h-screen">
+  return <div className="relative min-h-screen">
+      <LightningPattern density="sparse" seed={50} />
       {/* Hero Section */}
       <section className="relative py-16 sm:py-20 lg:py-32 bg-cover bg-center bg-no-repeat" style={{
       backgroundImage: 'url(/lovable-uploads/e66aff1b-b608-47e7-ae06-bf47981a4944.png)'
