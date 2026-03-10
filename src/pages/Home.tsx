@@ -142,7 +142,8 @@ export default function Home() {
       </section>
 
       {/* Services Section */}
-      <section className="gradient-bg py-16 sm:py-20 lg:py-24">
+      <section className="relative gradient-bg py-16 sm:py-20 lg:py-24">
+        <LightningPattern density="normal" seed={202} />
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="mx-auto max-w-2xl text-center">
             <h2 className="text-2xl sm:text-3xl font-bold tracking-tight text-foreground lg:text-4xl">
