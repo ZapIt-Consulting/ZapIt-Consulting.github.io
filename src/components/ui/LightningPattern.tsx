@@ -85,7 +85,7 @@ const LightningPattern: React.FC<LightningPatternProps> = ({
 }) => {
   const count = densityMap[density];
   const bolts = generateBolts(count, seed);
-  const color = "hsl(0 0% 18%)";
+  const color = "hsl(0 0% 35%)";
 
   return (
     <div
