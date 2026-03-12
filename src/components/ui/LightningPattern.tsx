@@ -19,7 +19,7 @@ const generateBolts = (count: number, seed: number): Bolt[] => {
     bolts.push({
       x: pseudo * 100,
       y: pseudo2 * 100,
-      size: 8 + pseudo3 * 10,
+      size: 18,
       rotation: Math.floor(pseudo4 * 360),
       opacity: 0.15 + pseudo3 * 0.2,
       variant: i % 5,
