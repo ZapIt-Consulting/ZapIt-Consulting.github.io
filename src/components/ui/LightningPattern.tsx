@@ -21,7 +21,7 @@ const generateBolts = (count: number, seed: number): Bolt[] => {
       y: pseudo2 * 100,
       size: 8 + pseudo3 * 10,
       rotation: Math.floor(pseudo4 * 360),
-      opacity: 0.06 + pseudo3 * 0.07,
+      opacity: 0.15 + pseudo3 * 0.2,
       variant: i % 5,
     });
   }
@@ -85,7 +85,7 @@ const LightningPattern: React.FC<LightningPatternProps> = ({
 }) => {
   const count = densityMap[density];
   const bolts = generateBolts(count, seed);
-  const color = "hsl(0 0% 18%)";
+  const color = "hsl(0 0% 35%)";
 
   return (
     <div
