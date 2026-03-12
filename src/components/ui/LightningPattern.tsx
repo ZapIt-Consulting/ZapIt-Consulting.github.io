@@ -21,7 +21,7 @@ const generateBolts = (count: number, seed: number): Bolt[] => {
       y: pseudo2 * 100,
       size: 8 + pseudo3 * 10,
       rotation: Math.floor(pseudo4 * 360),
-      opacity: 0.06 + pseudo3 * 0.07,
+      opacity: 0.15 + pseudo3 * 0.2,
       variant: i % 5,
     });
   }
