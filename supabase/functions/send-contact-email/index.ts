@@ -1,5 +1,4 @@
 import { serve } from "https://deno.land/std@0.168.0/http/server.ts"
-import { createClient } from 'https://esm.sh/@supabase/supabase-js@2'
 
 const corsHeaders = {
   'Access-Control-Allow-Origin': '*',
@@ -13,13 +12,13 @@ serve(async (req) => {
   }
 
   try {
-    const { firstName, lastName, email, company, industry, message } = await req.json()
+    const { name, email, company, industry, message } = await req.json()
 
     // Create email content
     const emailBody = `
 New Contact Form Submission
 
-Name: ${firstName} ${lastName}
+Name: ${name}
 Email: ${email}
 Company: ${company}
 Industry: ${industry}
@@ -46,7 +45,7 @@ Submitted at: ${new Date().toISOString()}
       body: JSON.stringify({
         from: 'ZapitLabs Contact <noreply@zapitlabs.com>',
         to: ['team@zapitlabs.com'],
-        subject: `New Contact Form Submission from ${firstName} ${lastName}`,
+        subject: `New Contact Form Submission from ${name}`,
         text: emailBody,
         html: emailBody.replace(/\n/g, '<br>'),
       }),
