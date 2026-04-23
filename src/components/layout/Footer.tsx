@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { Mail, MapPin, Linkedin, Twitter } from "lucide-react";
+import { Brain, Mail, Phone, MapPin, Linkedin, Twitter } from "lucide-react";
 
 const navigation = {
   main: [

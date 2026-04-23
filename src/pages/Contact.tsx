@@ -1,7 +1,7 @@
 import LightningPattern from "@/components/ui/LightningPattern";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import ContactForm from "@/components/forms/ContactForm";
-import { Mail, MapPin, Clock, MessageSquare } from "lucide-react";
+import { Mail, Phone, MapPin, Clock, MessageSquare, Calendar } from "lucide-react";
 const contactMethods = [{
   icon: Mail,
   title: "Email",
