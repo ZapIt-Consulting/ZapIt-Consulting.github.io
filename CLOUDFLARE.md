@@ -19,7 +19,7 @@ wrangler pages deploy dist --project-name zapit-website
 
 ### Option 2: Wrangler deploy (static assets)
 
-If you use `wrangler deploy`, Wrangler now reads the built frontend from `./dist` via the `[assets]` config in `wrangler.toml`.
+If you use `wrangler deploy`, Wrangler now runs `npm run build` first and then reads the built frontend from `./dist` via the `[assets]` config in `wrangler.toml`.
 
 ```bash
 npm run build
