@@ -10,9 +10,20 @@ This project is a Vite SPA and deploys to Cloudflare Pages as static assets. The
 
 ## Deploy
 
+### Option 1: Cloudflare Pages
+
 ```bash
 npm run build
 wrangler pages deploy dist --project-name zapit-website
+```
+
+### Option 2: Wrangler deploy (static assets)
+
+If you use `wrangler deploy`, Wrangler now reads the built frontend from `./dist` via the `[assets]` config in `wrangler.toml`.
+
+```bash
+npm run build
+wrangler deploy
 ```
 
 ## Git-based deploys (recommended)
