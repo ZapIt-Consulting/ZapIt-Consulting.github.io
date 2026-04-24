@@ -9,10 +9,10 @@ command = "npm run build"
 [assets]
 directory = "./dist"
 
-#[[routes]]
-#pattern = "zapitlabs.com"
-#custom_domain = true
+[[routes]]
+pattern = "zapitlabs.com"
+custom_domain = true
 
-#[[routes]]
-#pattern = "www.zapitlabs.com"
-#custom_domain = true
+[[routes]]
+pattern = "www.zapitlabs.com"
+custom_domain = true
